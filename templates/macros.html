@@ -1,0 +1,19 @@
+{% macro menuitem(page, current, capitalize=false) %}
+<li >
+    <a href="/{{ page }}.html"
+       {% if page == current %}class="active"{% endif %}>
+        {% if capitalize %}{{page | upper}}{% else %}{{page | title}}{% endif %}
+    </a>
+</li>
+{% endmacro menuitem %}
+
+{% macro navbar(current) %}
+<nav>
+    <ul>
+        {{ self::menuitem(page="home", current=current) }}
+        {{ self::menuitem(page="blog", current=current) }}
+        {{ self::menuitem(page="cv", current=current, capitalize=true) }}
+        {{ self::menuitem(page="about", current=current) }}
+    </ul>
+</nav>
+{% endmacro navbar %}

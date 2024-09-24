@@ -1,0 +1,21 @@
+{% import "macros.html" as macros %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Ben's Site</title>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;700&display=swap');
+  </style>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <section class="nav-section">
+    {{ macros::navbar(current="blog") }}
+  </section>
+      {% block content %} {% endblock %}
+</body>
+
+</html>
