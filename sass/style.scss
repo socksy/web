@@ -12,22 +12,38 @@ a {
 }
 $minimum_big_screen_width: 450px;
 body {
-
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-areas:
+        "nav"
+        "header";
+    grid-column-rule: 1px solid #000;
 
     @media screen and (min-width: $minimum_big_screen_width) {
-        grid-template-columns: 2fr 1fr;
-        grid-template-areas:
-            "nav    nav"
-            "header header";
+        & {
+            grid-template-columns: 2fr 1fr;
+            grid-template-areas:
+                "nav    nav"
+                "header header";
+            grid-column-gap: 1px;
+        }
         aside {
             grid-column: 2 / 3;
             margin: 10px;
             padding: 10px;
-            border: 1px solid #000;
+        }
+        p {
+            border-right: 1px solid black;
+            margin: 0;
+            padding: 10px;
         }
     }
+
+    aside {
+        border: 1px solid #000;
+        font-style: italic;
+    }
+
     .nav-section {
         width: 100%;
         grid-area: nav;
