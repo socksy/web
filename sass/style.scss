@@ -17,7 +17,11 @@ body {
     grid-template-areas:
         "nav"
         "header";
-    grid-column-rule: 1px solid #000;
+    border: 2px solid black;
+    p {
+        padding: 10px;
+        margin: 0;
+    }
 
     @media screen and (min-width: $minimum_big_screen_width) {
         & {
@@ -29,19 +33,17 @@ body {
         }
         aside {
             grid-column: 2 / 3;
-            margin: 10px;
-            padding: 10px;
         }
         p {
-            border-right: 1px solid black;
-            margin: 0;
-            padding: 10px;
+            border-right: 2px solid black;
         }
     }
 
     aside {
         border: 1px solid #000;
         font-style: italic;
+        margin: 10px;
+        padding: 10px;
     }
 
     .nav-section {
@@ -52,6 +54,8 @@ body {
         grid-area: header;
         background: #000;
         color: #FFF;
+        margin: 0;
+        padding: 20px;
     }
     * {
         grid-column: 1 / 2;
