@@ -1,11 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-<header>
-    <h1>
-        Ben's Site
-    </h1>
-    <img src="/grayscale_portrait.svg" alt="an svg stylized greyscale image of me, the author">
-</header>
+{{ macros::header(text="Ben's Site") }}
 <p><a href="{{ get_url(path='@/blog/_index.md') }}">Posts</a>.</p>
 {% endblock content %}

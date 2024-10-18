@@ -1,6 +1,6 @@
-{% macro menuitem(page, current, capitalize=false) %}
+{% macro menuitem(page, current, capitalize=false, href="") %}
 <li >
-    <a href="/{{ page }}.html"
+    <a href={% if href == "" %}"/{{ page }}"{% else %}{{ href }}{% endif %}
        {% if page == current %}class="active"{% endif %}>
         {% if capitalize %}{{page | upper}}{% else %}{{page | title}}{% endif %}
     </a>
@@ -10,10 +10,19 @@
 {% macro navbar(current) %}
 <nav>
     <ul>
-        {{ self::menuitem(page="home", current=current) }}
+        {{ self::menuitem(page="home", current=current, href="/") }}
         {{ self::menuitem(page="blog", current=current) }}
         {{ self::menuitem(page="cv", current=current, capitalize=true) }}
         {{ self::menuitem(page="about", current=current) }}
     </ul>
 </nav>
 {% endmacro navbar %}
+
+{% macro header(text) %}
+<header>
+    <h1>
+        {{ text }}
+    </h1>
+    <img src="/greyscale_portrait.svg" alt="an svg stylized greyscale image of me, the author">
+</header>
+{% endmacro header %}
