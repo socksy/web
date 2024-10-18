@@ -1,8 +1,16 @@
+$minimum_big_screen_width: 650px;
+$border_style: 2px solid var(--accent-color);
+$padding: 0.5rem;
+$font_size: 14pt;
+$big_header_size: 64px;
 :root {
     --text-color: #495057;
     --background-color: #FFFFFF;
     --accent-color: #000000;
     color: var(--text-color);
+    font-family: "IBM Plex Sans", "Arial", sans-serif;
+    font-size: $font_size;
+
 }
 
 a {
@@ -10,17 +18,100 @@ a {
     text-decoration: underline dotted;
     font-weight: 700;
 }
-$minimum_big_screen_width: 450px;
 body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
         "nav"
         "header";
-    border: 2px solid black;
-    p {
-        padding: 10px;
+    border: $border_style;
+    p, pre {
+        margin: 0px;
+        padding: $padding;
+    }
+    h2, h3, h4, h5 {
+        margin: 0px;
+        padding: $padding $padding 0;
+    }
+    h2 {
+        font-weight: 700;
+        font-size: 2 * $font_size;
+    }
+
+    aside {
+        border: 1px solid #000;
+        font-style: italic;
+        margin: 10px;
+        padding: $padding;
+    }
+
+    .nav-section {
+        grid-area: nav;
+    }
+    header {
+        grid-area: header;
+        background: #000;
+        color: #FFF;
         margin: 0;
+        padding: $padding $padding 0px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: end;
+        align-content: stretch;
+        justify-content: space-between;
+        overflow: clip;
+        h1 {
+            display: block;
+            margin: 0;
+            padding: 0;
+            font-family: "IBM Plex Sans", sans-serif;
+            font-weight: 700;
+            font-size: $big_header_size;
+        }
+        img {
+            max-width: 1.5 * $big_header_size;
+            display: block;
+            aspect-ratio: 1;
+        }
+    }
+    pre {
+        padding: 1rem;
+        border: none;
+        display: flex;
+        overflow: auto;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: end;
+        align-content: stretch;
+        justify-content: space-between;
+        &[data-linenos] {
+            padding: 1rem 0;
+        }
+        table {
+            ld {
+                padding: 0;
+            }
+            td:nth-of-type(1) {
+                text-align: center;
+                user-select: none;
+            }
+        }
+        mark {
+            display: block;
+            // zola docs say to do this but it gets overridden anyway?
+            //background-color: rgba(254, 252, 232, 0.9);
+        }
+        code {
+            width: 100%;
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+        }
+    }
+    * {
+        grid-column: 1 / 2;
     }
 
     @media screen and (min-width: $minimum_big_screen_width) {
@@ -34,32 +125,11 @@ body {
         aside {
             grid-column: 2 / 3;
         }
-        p {
-            border-right: 2px solid black;
+        p, h1, h2, h3, h4, h5, pre {
+            border-right: $border_style;
         }
     }
 
-    aside {
-        border: 1px solid #000;
-        font-style: italic;
-        margin: 10px;
-        padding: 10px;
-    }
-
-    .nav-section {
-        width: 100%;
-        grid-area: nav;
-    }
-    h1 {
-        grid-area: header;
-        background: #000;
-        color: #FFF;
-        margin: 0;
-        padding: 20px;
-    }
-    * {
-        grid-column: 1 / 2;
-    }
 }
 nav {
     display: flex;
@@ -93,6 +163,98 @@ nav {
                     text-decoration: underline;
                 }
             }
+        }
+    }
+}
+
+$hamburger_width: 33px;
+.nav-section {
+    #normal-menu {
+        display: none;
+    }
+    #hamburger-menu {
+        display: grid;
+        flex-direction: row;
+        align-content: stretch;
+        justify-items: center;
+        &:has(> .hamburger input:checked) nav {
+            opacity: 1;
+            transform: translate(0,$hamburger_width*1.5);
+        }
+        nav {
+            opacity: 0;
+            position: absolute;
+            transform-origin: 0% 0%;
+            transform: translate(0,-110%);
+            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+            margin: 0;
+            width: 100%;
+            padding: 0;
+            background: none;
+            ul {
+                background-color: var(--background-color);
+                margin: $padding;
+                border: $border_style;
+                flex-direction: column;
+            }
+        }
+        .hamburger {
+            position: relative;
+            margin: 10px;
+        }
+        input {
+            position: absolute;
+            top:  - $hamburger_width / 3;
+            left: - $hamburger_width / 3;
+            margin: 0;
+            padding: 0;
+            display: block;
+            width: 1.5 * $hamburger_width;
+            height: 1.5 * $hamburger_width;
+            cursor: pointer;
+            opacity: 0%;
+            z-index: 2;
+            -webkit-touch-callout: none;
+            &:checked ~ .hamburger-line {
+                opacity: 1;
+                transform: rotate(45deg) translate(-2px, -1px);
+                background: var(--accent-color)
+            }
+            &:checked ~ .hamburger-line:nth-last-child(2) {
+                opacity: 0;
+                transform: rotate(0deg) scale(0.2,0.2);
+            }
+            &:checked ~ .hamburger-line:nth-last-child(1) {
+                transform: rotate(-45deg) translate(0, -1px);
+            }
+        }
+        .hamburger-line {
+            display: block;
+            position: relative;
+            width: $hamburger_width;
+            height: 4px;
+            margin-bottom: 5px;
+            background: var(--accent-color);
+            border-radius: 3px;
+            z-index: 1;
+            transform-origin: 4px 0px;
+            transition: transform 0.5s cubic-bezier(0.8, 0.2, 0.05, 1.0),
+                        background 0.5s cubic-bezier(0.8, 0.2, 0.05, 1.0),
+                        opacity, 0.55s ease;
+            &:first-child {
+                transform-origin: 0 0;
+            }
+            &:last-child {
+                transform-origin: 0 100%;
+            }
+        }
+    }
+    @media screen and (min-width: 400px) {
+        #normal-menu {
+            display: block;
+        }
+        #hamburger-menu {
+            display: none;
         }
     }
 }
