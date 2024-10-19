@@ -7,7 +7,7 @@
 </li>
 {% endmacro menuitem %}
 
-{% macro navbar(current) %}
+{% macro basenavbar(current) %}
 <nav>
     <ul>
         {{ self::menuitem(page="home", current=current, href="/") }}
@@ -16,6 +16,21 @@
         {{ self::menuitem(page="about", current=current) }}
     </ul>
 </nav>
+{% endmacro basenavbar %}
+
+
+{% macro navbar(current) %}
+  <section class="nav-section">
+    <div id="normal-menu">{{ self::basenavbar(current=current) }}</div>
+    <div id="hamburger-menu">
+      <div class="hamburger">
+      <input type="checkbox">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      </div>
+      {{ self::basenavbar(current=current) }}</div>
+  </section>
 {% endmacro navbar %}
 
 {% macro header(text) %}

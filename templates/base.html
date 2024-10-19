@@ -9,22 +9,12 @@
   <style>
    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,400;&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
   </style>
   <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-  <section class="nav-section">
-    <div id="normal-menu">{{ macros::navbar(current="blog") }}</div>
-    <div id="hamburger-menu">
-      <div class="hamburger">
-      <input type="checkbox">
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      </div>
-      {{ macros::navbar(current="blog") }}</div>
-  </section>
       {% block content %} {% endblock %}
 </body>
 

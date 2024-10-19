@@ -1,6 +1,7 @@
 {% extends "base.html" %}
-
 {% block content %}
+
+{{ macros::navbar(current="blog") }}
 {{ macros::header(text=section.title) }}
 <ul>
   <!-- If you are using pagination, section.pages will be empty.

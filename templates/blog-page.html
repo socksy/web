@@ -1,6 +1,7 @@
 {% extends "base.html" %}
-
 {% block content %}
+
+{{ macros::navbar(current="blog") }}
 <header>
 <h1>
   {{ page.title }}
@@ -9,4 +10,5 @@
 </header>
 <p class="subtitle"><strong>{{ page.date }}</strong></p>
 {{ page.content | safe }}
+
 {% endblock content %}

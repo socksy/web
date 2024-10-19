@@ -7,10 +7,14 @@ $big_header_size: 64px;
     --text-color: #495057;
     --background-color: #FFFFFF;
     --accent-color: #000000;
+    --sans-font: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
+        "Nimbus Sans L", Roboto, "Noto Sans", "Segoe UI", Arial, Helvetica,
+        "Helvetica Neue", sans-serif;
+    --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+{{ page.content | safe }}
     color: var(--text-color);
-    font-family: "IBM Plex Sans", "Arial", sans-serif;
+    font-family: --sans-font
     font-size: $font_size;
-
 }
 
 a {
