@@ -11,9 +11,8 @@ $big_header_size: 64px;
         "Nimbus Sans L", Roboto, "Noto Sans", "Segoe UI", Arial, Helvetica,
         "Helvetica Neue", sans-serif;
     --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-{{ page.content | safe }}
     color: var(--text-color);
-    font-family: --sans-font
+    font-family: var(--sans-font);
     font-size: $font_size;
 }
 
@@ -80,6 +79,7 @@ body {
         }
     }
     pre {
+        font-family: var(--monospace);
         padding: 1rem;
         border: none;
         display: flex;
