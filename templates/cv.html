@@ -3,5 +3,5 @@
 {% block content %}
 {{ macros::navbar(current="cv") }}
 {{ macros::header(text="CV") }}
-WIP
+<main>{{ page.content | safe }}</main>
 {% endblock content %}
