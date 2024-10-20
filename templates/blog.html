@@ -3,6 +3,7 @@
 
 {{ macros::navbar(current="blog") }}
 {{ macros::header(text=section.title) }}
+<main>
 <ul>
   <!-- If you are using pagination, section.pages will be empty.
        You need to use the paginator object -->  
@@ -10,4 +11,5 @@
   <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
   {% endfor %}
 </ul>
+</main>
 {% endblock content %}

@@ -26,8 +26,10 @@ body {
     grid-template-columns: 1fr;
     grid-template-areas:
         "nav"
-        "header";
+        "header"
+        "content";
     border: $border_style;
+    margin: $padding;
     p, pre {
         margin: 0px;
         padding: $padding;
@@ -41,11 +43,30 @@ body {
         font-size: 2 * $font_size;
     }
 
-    aside {
-        border: 1px solid #000;
-        font-style: italic;
-        margin: 10px;
-        padding: $padding;
+    main > .footnote-definition {
+        //margin: $padding / 2;
+        padding: $padding / 2;
+        //position: relative;
+        p {
+            font-size: 10pt;
+            border:  none;
+            text-indent: 10px;
+            font-style: italic;
+        }
+        .footnote-definition-label {
+            position: absolute;
+            top: $padding;
+            left: $padding;
+            font-weight: 700;
+        }
+    }
+
+    main > * {
+        grid-column: 1/2;
+        position: relative;
+    }
+    main > * + .footnote-definition {
+        top: 0;
     }
 
     .nav-section {
@@ -53,29 +74,30 @@ body {
     }
     header {
         grid-area: header;
+        display: inline-grid;
+        grid-template-columns: subgrid;
+
         background: #000;
         color: #FFF;
         margin: 0;
         padding: $padding $padding 0px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: end;
-        align-content: stretch;
-        justify-content: space-between;
         overflow: clip;
         h1 {
             display: block;
             margin: 0;
-            padding: 0;
+            padding: $padding;
             font-family: "IBM Plex Sans", sans-serif;
             font-weight: 700;
             font-size: $big_header_size;
+            grid-column: 2/3
         }
         img {
+            justify-self: center;
+            align-self: end;
             max-width: 1.5 * $big_header_size;
             display: block;
             aspect-ratio: 1;
+            grid-column: 3/4;
         }
     }
     pre {
@@ -114,27 +136,41 @@ body {
             }
         }
     }
-    * {
-        grid-column: 1 / 2;
-    }
 
     @media screen and (min-width: $minimum_big_screen_width) {
         & {
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 1fr 5fr 2fr;
+            grid-template-rows: auto auto auto;
             grid-template-areas:
-                "nav    nav"
-                "header header";
+                "nav        nav     nav"
+                "header     header  header"
+                "whitespace content content"
+                "footer     footer  footer";
             grid-column-gap: 1px;
         }
-        aside {
-            grid-column: 2 / 3;
+        * {
+            grid-row: span 3;
+            grid-column: 1/2;
         }
-        p, h1, h2, h3, h4, h5, pre {
-            border-right: $border_style;
+
+        .footnote-definition {
+            grid-column: 2/3;
+            grid-row: span 3;
+            right: 0;
+            width: 100%;
+            align-self: start;
+            margin-top: 0;
         }
     }
 
 }
+
+main {
+    grid-area: content;
+    display: inline-grid;
+    grid-template-columns: subgrid;
+}
+
 nav {
     display: flex;
     padding: 20px;
@@ -155,7 +191,6 @@ nav {
         margin: -20px 0px -20px 0px;
         padding: 0;
         stroke: var(--accent-color);
-
         li {
             a {
                 font-size: 36px;
@@ -253,7 +288,7 @@ $hamburger_width: 33px;
             }
         }
     }
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: $minimum_big_screen_width) {
         #normal-menu {
             display: block;
         }
