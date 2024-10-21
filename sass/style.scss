@@ -107,8 +107,17 @@ body {
             grid-column: 3/4;
         }
     }
+    code {
+        font-family: var(--mono-font);
+        //color: var(--background-color);
+        //background-color: var(--text-color);
+        border-radius: 3px;
+        font-size: 0.8em;
+        padding: 0 $padding/2 0;
+    }
     pre {
-        font-family: var(--monospace);
+        code { background: rgba(0,0,0,0) }
+        font-family: var(--mono-font);
         padding: 1rem;
         border: none;
         display: flex;
