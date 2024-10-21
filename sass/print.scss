@@ -32,18 +32,19 @@ body {
         grid-area: header;
         //display: inline-grid;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         background-color: #061A23;
         box-shadow: 0px 3px 20px hsl(0deg 0% 0% / 0.28);
         z-index: 999;
 
         h1 {
+            margin-left: 13*$padding;
             //grid-column-start: 1;
             //grid-column-end: 3;
         }
         img {
             justify-self: flex-end;
-            margin-right: 30px;
+            margin-right: 8*$padding;
         }
         // different font rendering on firefox
         // pushes the grid to the next page. Instead
@@ -90,7 +91,7 @@ body {
     }
 
     .links {
-        max-width: 6rem;
+        max-width: 12*$padding;
         grid-area: side;
         border-radius: 0;
         background-color: var(--second-accent);
