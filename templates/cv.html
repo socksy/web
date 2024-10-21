@@ -21,23 +21,22 @@
 </ul>
 </div>
 
-<h1>Experience</h1>
+<h1 id="experience">Experience</h1>
 <hr>
 
 {% for work in cv.experience %}
 {{ macros::experience(exp=work) }}
 {% endfor %}
 
-<h1>Outside Responsibilities</h1>
+<h1 id="other">Outside Responsibilities</h1>
 
 {% for org in cv.other %}
 {{ macros::experience(exp=org) }}
 {% endfor %}
 
+<h1 id="education">Education</h1>
 
-<h1>Education</h1>
-
-{{ macros::experience(exp=cv.education) }}
+{{ macros::experience(exp=cv.education, id="university-of-st-andrews-education") }}
 <br>
 </main>
 {% endblock content %}

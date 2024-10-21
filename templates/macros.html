@@ -42,8 +42,8 @@
 </header>
 {% endmacro header %}
 
-{% macro experience(exp) %}
-<div class="experience" id="{{ exp.orgName | slugify | safe }}">
+{% macro experience(exp, id=false) %}
+<div class="experience" id="{% if id %}{{ id }}{% else %}{{ exp.orgName | slugify | safe }}{% endif %}">
     <div class="experience-details">
         <h3 class="org-name">{{ exp.orgName }}</h3>
         {% if exp.position %}<span class="position">{{ exp.position }}</span><br>{% endif %}
