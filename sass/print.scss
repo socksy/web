@@ -235,3 +235,6 @@ body {
         }
     }
 }
+// stupid firefox plugins that add extra page when printing
+.TridactylModenormal { display: none !important; }
+deepl-input-controller { display: none !important; }
