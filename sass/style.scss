@@ -80,7 +80,8 @@ body {
     header {
         grid-area: header;
         display: inline-grid;
-        grid-template-columns: subgrid;
+        //grid-template-columns: subgrid;
+        grid-template-columns: 7fr 1fr;
 
         background: #000;
         color: #FFF;
@@ -90,11 +91,12 @@ body {
         h1 {
             display: block;
             margin: 0;
-            padding: $padding;
+            padding: 0;
             font-family: "IBM Plex Sans", sans-serif;
             font-weight: 700;
             font-size: $big_header_size;
-            grid-column: 2/3
+            grid-column: 2/3;
+            grid-column: 1/2;
         }
         img {
             justify-self: center;
@@ -166,6 +168,13 @@ body {
             align-self: start;
             margin-top: 0;
         }
+        header {
+            grid-template-columns: subgrid;
+            h1 {
+                grid-column: 2/3;
+                padding: $padding;
+            }
+        }
     }
 
 }
@@ -223,13 +232,16 @@ $hamburger_width: 33px;
         justify-items: center;
         &:has(> .hamburger input:checked) nav {
             opacity: 1;
-            transform: translate(0,$hamburger_width*1.5);
+            //transform: translate(0,$hamburger_width*1.5);
+            transform: translate(0, calc(200% + $hamburger-width));
         }
         nav {
-            opacity: 0;
+            z-index: 50;
+            transform-box: content-box;
             position: absolute;
             transform-origin: 0% 0%;
-            transform: translate(0,-110%);
+            top: -50%;
+            //transform: translate(0,-110%);
             transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
             margin: 0;
             width: 100%;
@@ -245,6 +257,7 @@ $hamburger_width: 33px;
         .hamburger {
             position: relative;
             margin: 10px;
+            height: $hamburger_width;
         }
         input {
             position: absolute;
@@ -257,11 +270,11 @@ $hamburger_width: 33px;
             height: 1.5 * $hamburger_width;
             cursor: pointer;
             opacity: 0%;
-            z-index: 2;
+            z-index: 100;
             -webkit-touch-callout: none;
             &:checked ~ .hamburger-line {
                 opacity: 1;
-                transform: rotate(45deg) translate(-2px, -1px);
+                transform: rotate(45deg) translate(3px, -4px);
                 background: var(--accent-color)
             }
             &:checked ~ .hamburger-line:nth-last-child(2) {
@@ -269,10 +282,11 @@ $hamburger_width: 33px;
                 transform: rotate(0deg) scale(0.2,0.2);
             }
             &:checked ~ .hamburger-line:nth-last-child(1) {
-                transform: rotate(-45deg) translate(0, -1px);
+                transform: rotate(-45deg) translate(4px, 4px);
             }
         }
         .hamburger-line {
+            opacity: 1;
             display: block;
             position: relative;
             width: $hamburger_width;
@@ -283,7 +297,6 @@ $hamburger_width: 33px;
             z-index: 1;
             transform-origin: 4px 0px;
             transition: transform 0.5s cubic-bezier(0.8, 0.2, 0.05, 1.0),
-                        background 0.5s cubic-bezier(0.8, 0.2, 0.05, 1.0),
                         opacity, 0.55s ease;
             &:first-child {
                 transform-origin: 0 0;
@@ -300,5 +313,55 @@ $hamburger_width: 33px;
         #hamburger-menu {
             display: none;
         }
+    }
+}
+.links {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    padding: $padding;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    border-radius: 5px;
+    margin-top: $padding;
+
+    h1 {
+        font-style: italic;
+        max-width: 50%;
+    }
+    ul {
+        list-style-type: none;
+        text-align: end;
+        a {
+            color: var(--background-color);
+        }
+    }
+}
+.experience {
+    .experience-details {
+    display: grid;
+    grid-columns: 1fr 1fr;
+    .position {
+        grid-column: 2;
+        font-variant: small-caps;
+        font-weight: 700;
+        align-self: flex-end;
+        justify-self: end;
+        text-align: end;
+        width: 50%;
+    }
+    .org-name {
+        grid-column: 1;
+        padding: 0;
+    }
+    .work-dates {
+        grid-column: 2;
+        font-size: 11pt;
+        justify-self: end;
+        text-align: end;
+    }
+    .location {
+        grid-column: 1;
+    }
     }
 }

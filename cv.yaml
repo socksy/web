@@ -1,0 +1,138 @@
+---
+base:
+  name: Ben Lovell
+  title: Software Developer
+  email: "[ben@lovell.io](mailto:ben@lovell.io)"
+  url: "https://ben.lovell.io"
+  github: "[socksy](https://github.com/socksy)"
+  mastodon: "[@socksy@toot.cat](https://toot.cat/@socksy)"
+experience:
+  - company: Pitch Software GmbH
+    position: Senior Software Engineer
+    startDate: January 2019
+    endDate: January 2024
+    location: Berlin, Germany
+    intro: >
+      Contributed to the development of Pitch's backend and
+      frontend systems, working over 4 different product areas
+      and ending up specializing in the offline-first sync
+      system. Some of the stuff I worked on:
+    highlights:
+      - >
+         introduced a reproducible development environment and
+         tooling, improving workflows and productivity across
+         engineering team
+      - >
+         led a cross-team documentation working group, making
+         technical onboarding smoother and improving internal
+         knowledge sharing
+      - >
+         took initiative to fix many frontend and backend
+         problems, gaining buy-in from leadership
+      - >
+         designed and implemented improvement's to the the
+         core sync system to address data loss and developer
+         productivity issues in the offline first
+         functionality, working with senior leadership on a
+         long-term roadmap
+      - >
+         mentored junior engineers, guiding them through their
+         first feature implementations and fostering technical
+         growth
+  - company: Geeny/Telefonicá Next GmbH
+    position: Backend Data Engineer
+    startDate: March 2017
+    endDate: December 2019
+    location: Berlin, Germany
+    intro: >
+      Hired as part of the full time expansion of the Geeny
+      IoT Cloud platform from Telefonicá Next GmbH, in order
+      to build a data privacy first IoT solution I've:
+    highlights:
+      - >
+         architected a microservices infrastructure on AWS with
+         Docker, Kafka and HTTP/JSON
+      - >
+         analysed and translated product requirements into
+         technical implementations
+      - >
+         delivered 3 crucial Clojure services under a
+         month-long time constraint
+      - >
+         led the effort to have a 15-repo continuous
+         integration and deployment process with GitLab CI/CD,
+         reducing the release cycle from weeks to minutes
+  - company: Red Pineapple Media GmbH
+    position: Software Engineer
+    startDate: April 2015
+    endDate: February 2017
+    location: Berlin, Germany
+    intro: >
+      I was brought on to help the urgent rewrite of the video
+      ad delivery system from PHP using a modern Clojure
+      stack. Working in teams from 2 to 6 people I've:
+    highlights:
+      - >
+         rewritten business-critical APIs, improving
+         performance and reducing hosting infrastructure costs
+         by 70%
+      - >
+         developed the company's Real Time Bidding (RTB)
+         bidder, expanding their reach into a multibillion
+         dollar market
+      - >
+         played a key role in system design, partner
+         communication, and architecture decisions
+  - company: lifelife UG
+    position: Full Stack Developer
+    startDate: November 2014
+    endDate: April 2015
+    location: Berlin, Germany
+    intro: >
+      Created a decoupled separate service to interact with
+      the main Rails application. Implemented funnel metrics,
+      multiple locale support, and more.
+  - company: Skyscanner Ltd
+    position: "Intern at Change the Market (R&D)"
+    startDate: June 2013
+    endDate: August 2013
+    location: Edinburgh, UK
+    intro: >
+      Built a better R&D frontend interface by writing a small
+      DSL & parser (in JavaScript).
+  - company: University of St Andrews
+    position: Research Intern
+    startDate: June 2012
+    endDate: July 2012
+    intro: >
+      Created a population simulation tool for demographic and
+      graph db testing.
+other:
+  - organization: Clojure Berlin Meetup
+    position: Co-Organizer
+    startDate: October 2016
+    location: Berlin, Germany
+    endDate: Present
+    intro: >
+      Part of a small team taking turns to MC, filling in for
+      lack of speakers, and keeping our 900 member meetup
+      connected
+  - organization: ClojureBridge Berlin
+    position: Orga Team Member and Coach
+    startDate: Summer 2015
+    endDate: Summer 2017
+    intro: >
+      Conducted outreach, triaged attendee invitations,
+      organized catering, etc.
+education:
+  - establishment: University of St Andrews
+    location: St Andrews, UK
+    startDate: 2010
+    endDate: 2014
+    result: 2.1 June 2014, BSc (Hons) in Computer Science
+    intro: >
+      Heavy practical education with subjects including: *Data
+      Encoding, Artificial Intelligence, Operating Systems,
+      Computer Architecture, Knowledge Discovery and
+      Datamining, Programming Language Design and
+      Implementation (PLDI)*
