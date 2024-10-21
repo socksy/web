@@ -11,7 +11,7 @@ Afterwards I went to the [University of St Andrews](https://en.wikipedia.org/wik
 
 After uni I moved to [Berlin, Germany](https://en.wikipedia.org/wiki/Berlin), where I planned to see for a couple of years before moving on to somewhere else with the full advantages of an EU citizenship.
 
-10 years later, I am now a joint [German citizen](https://de.wikipedia.org/wiki/Kartoffel), and I am frequently told by British people that I sound German, not British[^british]. Unfortunately this has not translated much into my own language abilities, which flux around a B2[^b2] in German at the best of times.
+10 years later, I am now a joint [German citizen](https://de.wikipedia.org/wiki/Kartoffel), and I am frequently told by British people that I sound German, not British. Unfortunately this has not translated much into my own language abilities, which flux around a B2 in German at the best of times.
 
 ## Tech
 With regards to tech, I've been lost in that field since a long time. At the age of 9 I asked my father how I could make a computer game, and he showed me the basics of `if`, `printf` and `scanf` in C. I dutifully made a question and answer game, and was very proud of myself (despite the segfaults). 
