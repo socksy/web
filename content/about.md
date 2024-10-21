@@ -2,7 +2,7 @@
 title = "About"
 template = "about.html"
 +++
-## Naval gazing
+## Navel gazing
 Hi there, my name is Ben. I originally hail from the UK, being born in [Oxford](https://en.wikipedia.org/wiki/Oxford). Later on my family moved to a place near [Reading](https://en.wikipedia.org/wiki/Reading,_Berkshire), where I went to [Reading School](https://en.wikipedia.org/wiki/Reading_School), a school with the buildings of a private school but with the budget of a state school.
 
 Afterwards I went to the [University of St Andrews](https://en.wikipedia.org/wiki/St_Andrews)[^sta] to study Computer Science for my undergraduate, briefly staying in Edinburgh for a summer in 2013. 
