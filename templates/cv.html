@@ -25,41 +25,19 @@
 <hr>
 
 {% for work in cv.experience %}
-<div class="experience" id="{{ work.company | slugify | safe }}">
-    <div class="experience-details">
-        <h3 class="org-name">{{ work.company }}</h3>
-        <span class="position">{{ work.position }}</span><br>
-            {% if work.location %}<em class="location">{{ work.location }}</em><br>{% endif %}
-            <span class="work-dates">{{ work.startDate }}–{{ work.endDate }}</span>
-    </div>
-    {% if work.intro %}
-    <p class="intro">{{ work.intro | markdown(inline=true) | safe }}</p>
-    {% endif %}
-    {% if work.highlights %}
-    <ul>
-        {% for highlight in work.highlights %}
-        <li>{{ highlight | markdown(inline=true) | safe}}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-    <hr>
-</div>
+{{ macros::experience(exp=work) }}
 {% endfor %}
 
 <h1>Outside Responsibilities</h1>
 
 {% for org in cv.other %}
-<div class="experience" id="{{ org.organization | slugify | safe }}">
-    <div class="experience-details">
-        <h3 class="org-name">{{ org.organization }}</h3>
-        <span class="position">{{ org.position }}</span><br>
-        {% if org.location %}<em class="location">{{ org.location }}</em><br>{% endif %}
-        <span class="work-dates">{{ org.startDate }}–{{ org.endDate }}</span>
-    </div>
-    {% if org.intro %}
-    <p>{{ org.intro | markdown(inline=true) | safe }}</p>
-    {% endif %}
-</div>
+{{ macros::experience(exp=org) }}
 {% endfor %}
+
+
+<h1>Education</h1>
+
+{{ macros::experience(exp=cv.education) }}
+<br>
 </main>
 {% endblock content %}

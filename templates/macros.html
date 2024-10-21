@@ -41,3 +41,25 @@
     <img src="/greyscale_portrait.svg" alt="an svg stylized greyscale image of me, the author">
 </header>
 {% endmacro header %}
+
+{% macro experience(exp) %}
+<div class="experience" id="{{ exp.orgName | slugify | safe }}">
+    <div class="experience-details">
+        <h3 class="org-name">{{ exp.orgName }}</h3>
+        {% if exp.position %}<span class="position">{{ exp.position }}</span><br>{% endif %}
+        {% if exp.location %}<span class="location">{{ exp.location }}</span><br>{% endif %}
+            <span class="work-dates">{{ exp.startDate }}&nbsp;&ndash;&nbsp;{{ exp.endDate }}</span>
+    </div>
+    {% if exp.intro %}
+    <p class="intro">{{ exp.intro | markdown(inline=true) | safe }}</p>
+    {% endif %}
+    {% if exp.highlights %}
+    <ul>
+        {% for highlight in exp.highlights %}
+        <li>{{ highlight | markdown(inline=true) | safe}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <hr>
+</div>
+{% endmacro experience %}
