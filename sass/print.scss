@@ -66,16 +66,16 @@ body {
         grid-template-columns: auto 5fr 5fr;
         grid-template-areas:
             "side     experience experience"
-            "side     pitch      geeny"
-            "side     pitch      geeny"
             "side     pitch      rpm"
-            "side     lifelife   rpm"
-            "side     lifelife   rpm"
-            "side     skyscanner uni"
+            "side     pitch      rpm"
+            "side     pitch      lifelife"
+            "side     geeny      lifelife"
+            "side     geeny      skyscanner"
+            "side     geeny      uni"
             "side     othertitle edu-title"
-            "side     cljmeet   education"
-            "side     cljbridge education"
-            "side . ."
+            "side     cljmeet    education"
+            "side     cljbridge  education"
+            "side     .          ."
         ;
         hr { display:none; }
     }
