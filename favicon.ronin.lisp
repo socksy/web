@@ -1,0 +1,5 @@
+(clear)
+(resize 600 600)
+(fill (rect 10 10 300 600) "grey")
+(fill (circle 295 295 150) "black")
+(stroke (rect 1 1 599 599) "black" 100)
