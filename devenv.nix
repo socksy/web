@@ -11,6 +11,8 @@
   packages = [
     pkgs.git
     pkgs.zola
+    pkgs.imagemagick
+    pkgs.inkscape
   ];
 
   processes = {
