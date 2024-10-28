@@ -6,6 +6,8 @@
 
 
 
+{% block title %}CV of Ben Lovell{% endblock title %}
+
 {% block content %}
 {% set cv = load_data(path="cv.yaml") %}
 {{ macros::navbar(current="cv") }}
