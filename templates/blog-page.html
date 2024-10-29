@@ -4,7 +4,7 @@
 <meta property="og:title" content="{{ page.title }}">
 <meta property="og:url" content="{{ page.permalink }}">
 <meta property="og:type" content="article">
-<meta property="og:description" content="{{ page.summary }}">
+<meta property="og:description" content="{% if page.summary %}{{ page.summary | striptags | safe}}{% endif %}">
 {% endblock extraheaders %}
 {% block title %} {{ page.title }} {% endblock title %}
 
