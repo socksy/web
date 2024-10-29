@@ -47,6 +47,7 @@
     <div class="experience-details">
         <h3 class="org-name">{{ exp.orgName }}</h3>
         {% if exp.position %}<span class="position">{{ exp.position }}</span><br>{% endif %}
+        {% if exp.result %}<span class="result">{{ exp.result }}</span><br>{% endif %}
         {% if exp.location %}<span class="location">{{ exp.location }}</span><br>{% endif %}
             <span class="work-dates">{{ exp.startDate }}&nbsp;&ndash;&nbsp;{{ exp.endDate }}</span>
     </div>

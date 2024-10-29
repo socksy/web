@@ -20,7 +20,7 @@
 <h1>{{ cv.base.title }}</h1>
 <ul>
     <li>email: {{ cv.base.email | markdown(inline=true) | safe }}</li>
-    <li>url: <a href="{{ cv.base.url | markdown(inline=true) | safe }}">{{ cv.base.url | markdown(inline=true) | safe }}</a></li>
+    <li>website: <a href="{{ cv.base.url | markdown(inline=true) | safe }}">{{ cv.base.url | markdown(inline=true) | safe }}</a></li>
     <li>github: {{ cv.base.github | markdown(inline=true) | safe }}</li>
     <li>mastodon: {{ cv.base.mastodon | markdown(inline=true) | safe }}</li>
 </ul>

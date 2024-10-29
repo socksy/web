@@ -381,7 +381,7 @@ $hamburger_width: 33px;
         * {
             grid-row: span 1;
         }
-        .position {
+        .position, .result {
             grid-row: 1;
             grid-column: 2;
             font-variant: small-caps;

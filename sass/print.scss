@@ -1,6 +1,7 @@
 $padding: 0.5rem;
 $border_style: 0.5px dashed var(--text-color);
 $font_size: 9pt;
+$sidebar_width: $padding * 8;
 :root {
     --second-accent: #124D69;
 }
@@ -11,15 +12,14 @@ $font_size: 9pt;
 html,body{
     width: 210mm;
     height: 297mm;
+    overflow: clip;
 }
 
 * { grid-row: span 1;}
 p,ul {
     font-size: $font_size;
-    //line-height: $font_size * 1.2;
 }
 body {
-    br { display: none; }
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -38,27 +38,20 @@ body {
         z-index: 999;
 
         h1 {
-            margin-left: 13*$padding;
-            //grid-column-start: 1;
-            //grid-column-end: 3;
+            margin-left: $sidebar_width;
+            padding-left: $padding;
+            font-size: 32pt;
+            max-height: 100%;
         }
         img {
             justify-self: flex-end;
             margin-right: 8*$padding;
+            max-height: 100%;
         }
-        // different font rendering on firefox
-        // pushes the grid to the next page. Instead
-        // of working it all out from scratch, let's
-        // just resize the header for now
-        @supports (-moz-appearance:none) {
-            max-height: 66px;
-            img {max-height: 100%;}
-            h1 {font-size: 32pt;
-                max-height: 100%;}
-            align-content: center;
-        }
-
+        max-height: 3rem;
+        align-content: center;
     }
+
     main {
         height: 100%;
         padding: 0;
@@ -84,15 +77,13 @@ body {
     }
     h1 {
         display: block;
-        font-size: 1.5em;
-        padding: 0;
-        padding-left: $padding;
-        margin-bottom: 0;
-        margin-top: 0;
+        font-size: 20pt;
+        padding: $padding 0 0 $padding;
+        margin: 0;
     }
 
     .links {
-        max-width: 12*$padding;
+        max-width: $sidebar_width;
         grid-area: side;
         border-radius: 0;
         background-color: var(--second-accent);
@@ -103,30 +94,39 @@ body {
         margin-top: 0;
         padding-top: 1rem;
         > ul {
-            text-align: justify;
-            margin: 0;
-            font-size: 5pt;
+            text-align: left;
+            margin: $padding 0 0 0;
+            font-size: 6pt;
             padding-left: 0;
+            &:before {
+                content: "Online presence";
+                //font-weight: 700;
+            }
         }
         li {
-            margin: 0;
-            height: 1.5em;
+            padding-top: $padding/2;
+            padding-bottom: $padding/2;
+            //height: 2rem;
+            display: flex;
+            flex-direction: column;
         }
-        li:after {
+        li:before {
             content: "";
             display: inline-block;
             width: 100%;
             height: 0px;
             margin: 0;
             padding:0;
+            margin-bottom: $padding;
+            border-top: 0.5px solid #AAA;
         }
         h1 {
             display: inline-block;
             padding: 0;
             margin: 0 0 $padding 0;
-            text-align: center;
+            text-align: left;
             max-width: 100%;
-            font-size: 16pt;
+            font-size: 12pt;
         }
     }
     #pitch-software-gmbh {
@@ -202,7 +202,7 @@ body {
                 grid-row: 3/4;
                 font-size: $font_size;
             }
-            .position {
+            .position, .result {
                 align-self: start;
                 grid-row: 2/4;
                 font-size: $font-size;
