@@ -264,7 +264,8 @@ $hamburger_width: 33px;
             transform-box: content-box;
             position: absolute;
             transform-origin: 0% 0%;
-            top: -50%;
+            top: -410px;
+            left: 0px;
             //transform: translate(0,-110%);
             transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
             margin: 0;
@@ -280,13 +281,14 @@ $hamburger_width: 33px;
         }
         .hamburger {
             position: relative;
-            margin: 10px;
+            // the hamburger lines have a margin-bottom each so don't set that
+            margin: 10px 10px 0 10px;
             height: $hamburger_width;
         }
         input {
             position: absolute;
-            top:  - $hamburger_width / 3;
-            left: - $hamburger_width / 3;
+            top:  - $hamburger_width / 4;
+            left: - $hamburger_width / 4;
             margin: 0;
             padding: 0;
             display: block;
