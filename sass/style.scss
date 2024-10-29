@@ -61,8 +61,9 @@ body {
         }
         .footnote-definition-label {
             position: absolute;
-            top: $padding;
-            left: $padding;
+            top: $padding * 1.2;
+            left: $padding * 1.2;
+            font-size: 8pt;
             font-weight: 700;
         }
     }
