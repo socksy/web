@@ -192,8 +192,17 @@ main {
     grid-area: content;
     display: inline-grid;
     grid-template-columns: subgrid;
+    h1 {
+        font-weight: 700;
+        font-size: $big_header_size / 2;
+        margin: $padding;
+    }
 }
-
+.metadata {
+    grid-column: 1/2;
+    margin-top: $padding;
+    font-size: $font_size / 1.5;
+}
 nav {
     display: flex;
     padding: 20px;

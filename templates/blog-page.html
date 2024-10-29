@@ -1,5 +1,13 @@
 {% extends "base.html" %}
-{% block title %} {{ page.title }} {% endblock %}
+
+{% block extraheaders %}
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:url" content="{{ page.permalink }}">
+<meta property="og:type" content="article">
+<meta property="og:description" content="{{ page.summary }}">
+{% endblock extraheaders %}
+{% block title %} {{ page.title }} {% endblock title %}
+
 {% block content %}
 
 {{ macros::navbar(current="blog") }}
@@ -9,9 +17,12 @@
 </h1>
 <img src="/greyscale_portrait.svg" alt="an svg stylized greyscale image of me, the author">
 </header>
-<p class="subtitle"><strong>{{ page.date }}</strong></p>
+<section class="metadata">
+  <p class="date"><strong>Date:<br><time datetime="{{ page.date }}">{{ page.date }}</time></strong></p>
+  <p class="reading-time">Reading time:<br><strong>{{ page.reading_time }} minutes</strong></p>
+</section>
 <main>
-{{ page.content | safe }}
+  {{ page.content | safe }}
 </main>
 
 {% endblock content %}

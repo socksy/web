@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 
 {% block extraheaders %}
+{% set cv = load_data(path="cv.yaml") %}
 <link href="/print.css" media="print" rel="stylesheet">
+
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:url" content="{{ page.permalink | safe }}">
+<meta property="og:type" content="website">
+<meta property="og:description" content="{{ cv.base.summary | safe }}">
 {% endblock extraheaders %}
-
-
-
 {% block title %}CV of Ben Lovell{% endblock title %}
 
 {% block content %}
