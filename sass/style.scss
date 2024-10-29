@@ -32,6 +32,7 @@ body {
     grid-template-areas:
         "nav"
         "header"
+        "metadata"
         "content";
     border: $border_style;
     margin: $padding;
@@ -158,10 +159,10 @@ body {
             grid-template-columns: 1fr 5fr 2fr;
             grid-template-rows: auto auto auto;
             grid-template-areas:
-                "nav        nav     nav"
-                "header     header  header"
-                "whitespace content content"
-                "footer     footer  footer";
+                "nav      nav     nav"
+                "header   header  header"
+                "metadata content content"
+                "footer   footer  footer";
             grid-column-gap: 1px;
         }
         * {
@@ -199,9 +200,14 @@ main {
     }
 }
 .metadata {
-    grid-column: 1/2;
+    grid-area: metadata;
     margin-top: $padding;
     font-size: $font_size / 1.5;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    height: fit-content;
+    justify-content: space-between;
 }
 nav {
     display: flex;
