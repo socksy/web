@@ -2,7 +2,8 @@ $minimum_big_screen_width: 650px;
 $border_style: 2px solid var(--accent-color);
 $padding: 0.5rem;
 $font_size: 14pt;
-$big_header_size: 64px;
+//$big_header_size: 64px;
+$big_header_size: 10vw;
 :root {
     --text-color: #495057;
     --background-color: #FFFFFF;
