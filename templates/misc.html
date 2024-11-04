@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+
+{{ macros::navbar(current="misc") }}
+{{ macros::header(text=page.title) }}
+
+<main>
+{{ page.content | safe}}
+</main>
+{% endblock content %}
