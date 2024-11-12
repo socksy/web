@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+cd "$(dirname "${BASH_SOURCE[0]}")/.." 
+
+slugify() {
+  local string="$1"
+  echo "$string" | tr '[:upper:]' '[:lower:]' | tr -s ' ' '-' | tr -cd '[:alnum:]-'
+}
+
+if [ -z "$1" ]; then
+  echo "Usage: $0 \"blog post title\""
+  exit 1
+fi
+
+export date_str="$(date +%F)"
+export slug="$(slugify "$1")"
+cat << EOF > "content/blog/${date_str}-$slug.md"
++++
+title = "$1"
+date = "${date_str}"
+draft = true
++++
+
+wip
+<!-- more -->
+EOF

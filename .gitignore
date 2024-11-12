@@ -9,3 +9,7 @@ devenv.local.nix
 .pre-commit-config.yaml
 
 public/
+
+*.swp
+*.swo
+*~
