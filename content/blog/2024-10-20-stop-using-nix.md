@@ -3,9 +3,9 @@ title = "Stop using nix"
 +++
 # (for your project dependencies)
 At the [Heart of Clojure](https://2024.heartofclojure.eu) conference this year someone gave [a lightning talk](https://www.youtube.com/watch?v=Z_8VSnezM8g) praising the virtues of using the [nix](https://nixos.org/) package manager for declaratively and reproducibly declaring your dependencies per project.
+<!-- more -->
 
 Supposedly there were some talks that reminded the speaker of the pains he hadn't had in 6 years, since he started using nix for package management. Something that hits close to my heart, since I've been using nix and NixOS for about the same length of time.
-<!-- more -->
 
 
 Specifically, I've implemented shell.nix files for reproducible build environments in a professional context, and had the scripts enabled to just `direnv` my way into them. It was truly a blessing over what we had before.

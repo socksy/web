@@ -1,31 +1,32 @@
 $minimum_big_screen_width: 650px;
-$border_style: 2px solid var(--accent-color);
+$text-color: #495057;
+$background-color: #FFFFFF;
+$accent-color: #000000;
+
+$border_style: 2px solid $accent-color;
 $padding: 0.5rem;
 $font_size: 14pt;
 //$big_header_size: 64px;
 $big_header_size: 10vw;
 :root {
-    --text-color: #495057;
-    --background-color: #FFFFFF;
-    --accent-color: #000000;
     --sans-font: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
         "Nimbus Sans L", Roboto, "Noto Sans", "Segoe UI", Arial, Helvetica,
         "Helvetica Neue", sans-serif;
     --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-    color: var(--text-color);
+    color: $text-color;
     font-family: var(--sans-font);
     font-size: $font_size;
 }
 
 a {
-    color: var(--text-color);
+    color: $text-color;
     text-decoration: underline dotted;
     font-weight: 700;
 }
 hr {
     color: rgba(0,0,0,0);
     width: 100%;
-    border-top: 1px solid var(--text-color);
+    border-top: 1px solid $text-color;
 }
 body {
     display: grid;
@@ -112,8 +113,8 @@ body {
     }
     code {
         font-family: var(--mono-font);
-        //color: var(--background-color);
-        //background-color: var(--text-color);
+        //color: $background-color;
+        //background-color: $text-color;
         border-radius: 3px;
         font-size: 0.8em;
         padding: 0 $padding/2 0;
@@ -191,6 +192,63 @@ body {
 
 }
 
+.blog-link {
+    text-decoration: none;
+    font-weight: inherit;
+}
+.blog-articles {
+    list-style: none;
+}
+
+.blog-card {
+    transition: all .15s;
+    box-shadow: 5px 5px $accent-color;
+    &:hover {
+        box-shadow: none;
+        transform: translate(5px, 5px);
+        color: $background-color;
+        background: $accent-color;
+    }
+    border: 1px dotted;
+    margin: $padding;
+    .blog-card--heading {
+        margin: $padding;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        h1 {
+            margin: 0;
+            padding: 0;
+            font-size: $font_size * 3;
+        }
+        .blog-card--heading--details{
+            text-align: end;
+            margin: $padding;
+            margin-top: $font-size;
+        }
+    }
+    .blog-card--summary {
+        h1 {
+            font-size: $font_size;
+        }
+    }
+    @media screen and (max-width: $minimum_big_screen_width) {
+        .blog-card--summary { display: none; }
+        .blog-card--heading {
+            flex-direction: column;
+            align-items: left;
+            .blog-card--heading--details {
+                text-align: left;
+                padding: $padding;
+            }
+        }
+        h1 {
+            font-size: $font-size;
+        }
+    }
+}
+
 main {
     grid-area: content;
     display: inline-grid;
@@ -214,7 +272,7 @@ main {
 nav {
     display: flex;
     padding: 20px;
-    background: var(--background-color);
+    background: $background-color;
     ul {
         list-style-type: none;
         width: 100%;
@@ -230,11 +288,11 @@ nav {
         flex-wrap: nowrap;
         margin: -20px 0px -20px 0px;
         padding: 0;
-        stroke: var(--accent-color);
+        stroke: $accent-color;
         li {
             a {
                 font-size: 36px;
-                color: var(--text-color);
+                color: $text-color;
                 text-decoration: none;
                 font-weight: 400;
                 &.active {
@@ -275,7 +333,7 @@ $hamburger_width: 33px;
             padding: 0;
             background: none;
             ul {
-                background-color: var(--background-color);
+                background-color: $background-color;
                 margin: $padding;
                 border: $border_style;
                 flex-direction: column;
@@ -303,7 +361,7 @@ $hamburger_width: 33px;
             &:checked ~ .hamburger-line {
                 opacity: 1;
                 transform: rotate(45deg) translate(3px, -4px);
-                background: var(--accent-color)
+                background: $accent-color
             }
             &:checked ~ .hamburger-line:nth-last-child(2) {
                 opacity: 0;
@@ -320,7 +378,7 @@ $hamburger_width: 33px;
             width: $hamburger_width;
             height: 4px;
             margin-bottom: 5px;
-            background: var(--accent-color);
+            background: $accent-color;
             border-radius: 3px;
             z-index: 1;
             transform-origin: 4px 0px;
@@ -344,8 +402,8 @@ $hamburger_width: 33px;
     }
 }
 .links {
-    background-color: var(--text-color);
-    color: var(--background-color);
+    background-color: $text-color;
+    color: $background-color;
     padding: $padding;
     display: flex;
 
@@ -368,7 +426,7 @@ $hamburger_width: 33px;
         list-style-type: none;
         text-align: end;
         a {
-            color: var(--background-color);
+            color: $background-color;
         }
     }
 }

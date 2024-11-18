@@ -1,15 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
-
 {{ macros::navbar(current="blog") }}
 {{ macros::header(text=section.title) }}
 <main>
-<ul>
-  <!-- If you are using pagination, section.pages will be empty.
-       You need to use the paginator object -->  
+  <ul class="blog-articles">
   {% for page in section.pages %}
-  <li><a href="{{ page.permalink | safe }}"><strong>{{ page.title }}</strong><br><p>{{ page.summary | safe }}</p></a></li>
+    <li>
+      <a class="blog-link" href="{{ page.permalink | striptags | safe }}">
+        <div class="blog-card">
+          <div class="blog-card--heading">
+            <h1>{{ page.title }}</h1>
+            <div class="blog-card--heading--details">
+              <span class="date">Date:&nbsp;<strong><time datetime="{{ page.date }}">{{ page.date }}</time></strong></span>
+              <br>
+              <span class="reading-time">Reading&nbsp;time:&nbsp;<strong>{{ page.reading_time }}&nbsp;minutes</strong></span>
+            </div>
+          </div>
+          <div class="blog-card--summary">
+            {{ page.summary | regex_replace(pattern=`<\/?a( [^ >]+){0,2}>`, rep=``) | safe }}
+          </div>
+        </div></a></li>
   {% endfor %}
-</ul>
+  </ul>
 </main>
 {% endblock content %}

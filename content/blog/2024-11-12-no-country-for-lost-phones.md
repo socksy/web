@@ -3,8 +3,6 @@ title = "No Country for Lost Phones"
 date = "2024-11-12"
 +++
 
-# No Country for Lost Phones
-
 I spend a lot of my time lately worrying. One thing I worry about losing access to my entire existence, especially when on holiday.
 <!-- more -->
 
