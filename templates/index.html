@@ -3,10 +3,37 @@
 
 {{ macros::navbar(current="home") }}
 {{ macros::header(text="Ben's Site") }}
-<p><a href="{{ get_url(path='@/blog/_index.md') }}">Posts</a>.</p>
+
+    {% set image_1200_webp = resize_image(path="me_with_sakura.jpg",width=1200,op="fit_width",format="webp",quality=90) %}
+    {% set image_1200_jpeg = resize_image(path="me_with_sakura.jpg",width=1200,op="fit_width",format="jpeg",quality=90) %}
+    {% set image_800_webp = resize_image(path="me_with_sakura.jpg",width=800,op="fit_width",format="webp",quality=90) %}
+    {% set image_800_jpeg = resize_image(path="me_with_sakura.jpg",width=800,op="fit_width",format="jpeg",quality=90) %}
+<div class="homepage">
+    <picture>
+        <source srcset="{{ image_1200_webp.url }} 1200w
+                        {{ image_800_webp.url }} 800w"
+                sizes="(max-width: 800px) 800px
+                        1200px"
+                type = "image/webp">
+        <source srcset="{{ image_1200_jpeg.url }} 1200w
+                        {{ image_800_jpeg.url }} 800w"
+                sizes="(max-width: 800px) 800px
+                        1200px"
+                type = "image/jpeg">
+        <img src="{{ image_1200_webp.url }}" alt="A picture of me in front of cherry blossom">
+    </picture>
+
+    <div class="homepage-links">
+        <strong>Links</strong>
+        <ul>
+            <li><a href="https://github.com/socksy"><span class="svg-wrapper">{{ load_data(path="github.svg") | safe }}</span><span class="link-text-wrapper">&nbsp;&nbsp;&nbsp;&nbsp;GitHub</span></a></li>
+            <li><a href="https://bsky.app/profile/ben.lovell.io"><span class="svg-wrapper">{{ load_data(path="bluesky.svg") | safe }}</span><span class="link-text-wrapper">&nbsp;&nbsp;&nbsp;&nbsp;Bluesky</span></a></li>
+            <li><a href="https://toot.cat/@socksy"><span class="svg-wrapper">{{ load_data(path="mastodon.svg") | safe }}</span><span class="link-text-wrapper">&nbsp;&nbsp;&nbsp;&nbsp;Mastodon</span></a></li>
+        </ul>
+        </p>
+    </div>
+</div>
+    <main></main>
 
 
-<a href="/misc/impressum/">Impressum</a>
-<a href="/misc/privacy-policy/">Privacy Policy</a>
-<a href="/misc/transparency-statement/">Transparency Statement</a>
 {% endblock content %}
