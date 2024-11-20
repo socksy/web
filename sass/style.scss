@@ -9,13 +9,13 @@ $padding: 0.5rem;
 $font-size: 14pt;
 //$big-header-size: 64px;
 
-$max-screen-width: 1400px;
+$max-screen-width: 1000px;
 
-@function clamped-vmin($value) {
-    @return min(#{$value}vmin, #{calc(calc($value/100) * $max-screen-width)});
+@function clamped-vw($value) {
+    @return min(#{$value}vw, #{calc(calc($value/100) * $max-screen-width)});
 }
 
-$big-header-size: clamped-vmin(10);
+$big-header-size: clamped-vw(10);
 
 :root {
     --sans-font: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
@@ -45,7 +45,7 @@ hr {
     border-top: 1px solid $text-color;
 }
 #top-level {
-    max-width: clamped-vmin(100);
+    max-width: clamped-vw(100);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -215,6 +215,8 @@ hr {
 }
 .blog-articles {
     list-style: none;
+    margin: 0;
+    padding-left: 0;
 }
 
 #top-level .blog-card {
@@ -498,7 +500,7 @@ $hamburger_width: 33px;
 }
 
 footer {
-    width: clamped-vmin(100);
+    width: clamped-vw(100);
     font-size: 0.75 * $font-size;
     display: flex;
     flex-direction: row;
@@ -530,11 +532,11 @@ footer {
     background: $background-color;
     opacity: 90%;
     border: $border-style;
-    left: clamped-vmin(8);
+    left: clamped-vw(8);
     padding: $padding;
     padding-right: $padding*2;
     width: fit-content;
-    $home-links-size: clamped-vmin(4);
+    $home-links-size: clamped-vw(4);
     font-size: $home-links-size;
     ul {
         list-style: none;
@@ -576,7 +578,7 @@ footer {
         }
     }
     @media screen and (max-width: $minimum_big_screen_width) {
-        $home-links-mob-size: clamped-vmin(6.5);
+        $home-links-mob-size: clamped-vw(6.5);
         font-size: $home-links-mob-size;
         padding-right: calc($home-links-mob-size/4);
         left: $padding;
