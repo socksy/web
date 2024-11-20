@@ -8,7 +8,15 @@ $border-style: 2px solid $accent-color;
 $padding: 0.5rem;
 $font-size: 14pt;
 //$big-header-size: 64px;
-$big-header-size: 10vw;
+
+$max-screen-width: 1400px;
+
+@function clamped-vmin($value) {
+    @return min(#{$value}vmin, #{calc(calc($value/100) * $max-screen-width)});
+}
+
+$big-header-size: clamped-vmin(10);
+
 :root {
     --sans-font: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
         "Nimbus Sans L", Roboto, "Noto Sans", "Segoe UI", Arial, Helvetica,
@@ -21,6 +29,9 @@ $big-header-size: 10vw;
 
 body {
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 a {
@@ -34,6 +45,7 @@ hr {
     border-top: 1px solid $text-color;
 }
 #top-level {
+    max-width: clamped-vmin(100);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -110,7 +122,7 @@ hr {
         img {
             justify-self: center;
             align-self: end;
-            max-width: 1.5 * $big-header-size;
+            max-width: calc(1.5 * $big-header-size);
             display: block;
             aspect-ratio: 1;
             grid-column: 3/4;
@@ -486,6 +498,7 @@ $hamburger_width: 33px;
 }
 
 footer {
+    width: clamped-vmin(100);
     font-size: 0.75 * $font-size;
     display: flex;
     flex-direction: row;
@@ -517,11 +530,11 @@ footer {
     background: $background-color;
     opacity: 90%;
     border: $border-style;
-    left: 8vw;
+    left: clamped-vmin(8);
     padding: $padding;
     padding-right: $padding*2;
     width: fit-content;
-    $home-links-size: 4vw;
+    $home-links-size: clamped-vmin(4);
     font-size: $home-links-size;
     ul {
         list-style: none;
@@ -543,7 +556,7 @@ footer {
                 justify-content: end;
             }
             .link-text-wrapper {
-                margin-left: -($home-links-size - ($home-links-size/4)/2);
+                margin-left: calc(0px - #{$home-links-size} * (7/8) );
             }
         }
         a {
@@ -563,9 +576,9 @@ footer {
         }
     }
     @media screen and (max-width: $minimum_big_screen_width) {
-        $home-links-mob-size: 6.5vw;
+        $home-links-mob-size: clamped-vmin(6.5);
         font-size: $home-links-mob-size;
-        padding-right: $home-links-mob-size/4;
+        padding-right: calc($home-links-mob-size/4);
         left: $padding;
         ul li svg {
             width: $home-links-mob-size;
@@ -573,7 +586,7 @@ footer {
         }
 
         ul li .link-text-wrapper {
-            margin-left: -($home-links-mob-size - ($home-links-mob-size/4)/2);
+              margin-left: calc(0px - #{$home-links-mob-size} * 7/8 );
         }
     }
 }
