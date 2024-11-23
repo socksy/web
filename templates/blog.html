@@ -1,4 +1,8 @@
 {% extends "base.html" %}
+{% block extraheaders %}
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="{{ get_url(path="blog/atom.xml", trailing_slash=false) }}">
+<meta property="og:image" content="/logo_and_me.png">
+{% endblock extraheaders %}
 {% block content %}
 {{ macros::navbar(current="blog") }}
 {{ macros::header(text=section.title) }}
