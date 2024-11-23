@@ -6,6 +6,8 @@
 <meta property="og:type" content="article">
 <meta property="og:description" content="{% if page.summary %}{{ page.summary | striptags | safe}}{% endif %}">
 <meta property="og:image" content="{% if page.extra.og_image %}{{ page.extra.og_image | safe}}{% else %}/logo_and_me.png{% endif %}">
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="{{ get_url(path="blog/atom.xml", trailing_slash=false) }}">
+
 {% endblock extraheaders %}
 {% block title %} {{ page.title }} {% endblock title %}
 
