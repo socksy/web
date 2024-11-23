@@ -44,6 +44,7 @@ hr {
     width: 100%;
     border-top: 1px solid $text-color;
 }
+
 #top-level {
     max-width: clamped-vw(100);
     display: grid;
@@ -213,11 +214,6 @@ hr {
     text-decoration: none;
     font-weight: inherit;
 }
-.blog-articles {
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-}
 
 #top-level .blog-card {
     transition: all .15s;
@@ -277,6 +273,19 @@ hr {
         font-weight: 700;
         font-size: $big-header-size / 2;
         margin: $padding;
+    }
+    &.blog-listing {
+        grid-column: 1/-1;
+        display: grid;
+        grid-template-columns: 1fr 80% 1fr;
+
+        > .blog-articles {
+            list-style: none;
+            margin: 0;
+            padding-left: 0;
+            grid-column: 2/3;
+        }
+
     }
 }
 .metadata {

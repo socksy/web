@@ -6,7 +6,7 @@
 {% block content %}
 {{ macros::navbar(current="blog") }}
 {{ macros::header(text=section.title) }}
-<main>
+<main class="blog-listing">
   <ul class="blog-articles">
   {% for page in section.pages %}
     <li>
