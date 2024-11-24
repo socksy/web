@@ -463,9 +463,7 @@ $hamburger_width: 33px;
     .experience-details {
         padding: $padding;
         display: grid;
-        grid-columns: 2fr 3fr;
         grid-column-gap: $padding;
-        grid-rows: 1fr 1fr;
         margin-top: $padding;
         * {
             grid-row: span 1;
