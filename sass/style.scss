@@ -104,9 +104,8 @@ hr {
         display: inline-grid;
         //grid-template-columns: subgrid;
         grid-template-columns: 7fr 1fr;
-
-        background: #000;
-        color: #FFF;
+        background: $accent-color;
+        color: $background-color;
         margin: 0;
         padding: $padding $padding 0px;
         overflow: clip;
@@ -536,8 +535,8 @@ footer {
     position: absolute;
     top: 20%;
     z-index: 2;
-    background: $background-color;
-    opacity: 90%;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
     border: $border-style;
     left: clamped-vw(8);
     padding: $padding;
