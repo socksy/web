@@ -19,7 +19,7 @@ html,body{
 p,ul {
     font-size: $font_size;
 }
-body {
+#top-level {
     display: flex;
     flex-direction: column;
     padding: 0;
