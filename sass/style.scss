@@ -1,21 +1,23 @@
-$minimum_big_screen_width: 650px;
+// Colours
 $text-color: #495057;
 $background-color: #FFFFFF;
 $accent-color: #000000;
-$underline: underline dotted;
 
-$border-style: 2px solid $accent-color;
-$padding: 0.5rem;
-$font-size: 14pt;
-//$big-header-size: 64px;
-
+// Layout
+$minimum-big-screen-width: 650px;
 $max-screen-width: 1000px;
+$padding: 0.5rem;
+$border-style: 2px solid $accent-color;
+$hamburger-width: 33px;
 
 @function clamped-vw($value) {
     @return min(#{$value}vw, #{calc(calc($value/100) * $max-screen-width)});
 }
 
+// Typography
+$font-size: 14pt;
 $big-header-size: clamped-vw(10);
+$underline: underline dotted;
 
 :root {
     --sans-font: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
@@ -25,6 +27,12 @@ $big-header-size: clamped-vw(10);
     color: $text-color;
     font-family: var(--sans-font);
     font-size: $font-size;
+}
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 body {
@@ -137,17 +145,15 @@ hr {
         padding: 0 $padding/2 0;
     }
     pre {
+        @include flex-row;
         code { background: rgba(0,0,0,0) }
         font-family: var(--mono-font);
         padding: 1rem;
         border: none;
-        display: flex;
         overflow: auto;
-        flex-direction: row;
         flex-wrap: nowrap;
         align-items: end;
         align-content: stretch;
-        justify-content: space-between;
         &[data-linenos] {
             padding: 1rem 0;
         }
@@ -174,7 +180,7 @@ hr {
         }
     }
 
-    @media screen and (min-width: $minimum_big_screen_width) {
+    @media screen and (min-width: $minimum-big-screen-width) {
         & {
             grid-template-columns: 1fr 5fr 2fr;
             grid-template-rows: auto auto auto;
@@ -226,10 +232,8 @@ hr {
     border: 1px dotted;
     margin: $padding;
     .blog-card--heading {
+        @include flex-row;
         margin: $padding;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
         align-items: start;
         h1 {
             margin: 0;
@@ -247,7 +251,7 @@ hr {
             font-size: $font-size;
         }
     }
-    @media screen and (max-width: $minimum_big_screen_width) {
+    @media screen and (max-width: $minimum-big-screen-width) {
         .blog-card--summary { display: none; }
         .blog-card--heading {
             flex-direction: column;
@@ -287,33 +291,33 @@ hr {
 
     }
 }
-.metadata {
+.entry-metadata {
+    @include flex-row;
     grid-area: metadata;
     margin-top: $padding;
     font-size: $font-size / 1.5;
-    display: flex;
     width: 100%;
     flex-wrap: wrap;
     height: fit-content;
-    justify-content: space-between;
 }
 nav {
     display: flex;
     padding: 20px;
     background: $background-color;
     ul {
+        @include flex-row;
         list-style-type: none;
+        align-items: center;
+        align-content: stretch;
+        flex-wrap: nowrap;
+
         width: 100%;
         height: 100%;
-        display: flex;
+
         font-family: "IBM Plex Sans Condensed", sans-serif;
         font-weight: 400;
         font-style: normal;
-        align-items: center;
-        justify-content: space-around;
-        align-content: stretch;
-        flex-direction: row;
-        flex-wrap: nowrap;
+
         margin: -20px 0px -20px 0px;
         padding: 0;
         stroke: $accent-color;
@@ -332,7 +336,6 @@ nav {
     }
 }
 
-$hamburger_width: 33px;
 .nav-section {
     #normal-menu {
         display: none;
@@ -344,7 +347,7 @@ $hamburger_width: 33px;
         justify-items: center;
         &:has(> .hamburger input:checked) nav {
             opacity: 1;
-            //transform: translate(0,$hamburger_width*1.5);
+            //transform: translate(0,$hamburger-width*1.5);
             transform: translate(0, calc(200% + $hamburger-width));
         }
         nav {
@@ -371,17 +374,17 @@ $hamburger_width: 33px;
             position: relative;
             // the hamburger lines have a margin-bottom each so don't set that
             margin: 10px 10px 0 10px;
-            height: $hamburger_width;
+            height: $hamburger-width;
         }
         input {
             position: absolute;
-            top:  - $hamburger_width / 4;
-            left: - $hamburger_width / 4;
+            top:  - $hamburger-width / 4;
+            left: - $hamburger-width / 4;
             margin: 0;
             padding: 0;
             display: block;
-            width: 1.5 * $hamburger_width;
-            height: 1.5 * $hamburger_width;
+            width: 1.5 * $hamburger-width;
+            height: 1.5 * $hamburger-width;
             cursor: pointer;
             opacity: 0%;
             z-index: 100;
@@ -403,7 +406,7 @@ $hamburger_width: 33px;
             opacity: 1;
             display: block;
             position: relative;
-            width: $hamburger_width;
+            width: $hamburger-width;
             height: 4px;
             margin-bottom: 5px;
             background: $accent-color;
@@ -420,7 +423,7 @@ $hamburger_width: 33px;
             }
         }
     }
-    @media screen and (min-width: $minimum_big_screen_width) {
+    @media screen and (min-width: $minimum-big-screen-width) {
         #normal-menu {
             display: block;
         }
@@ -430,14 +433,13 @@ $hamburger_width: 33px;
     }
 }
 .links {
+    @include flex-row;
     background-color: $text-color;
     color: $background-color;
     padding: $padding;
-    display: flex;
 
     h1 { display: none; }
-    flex-direction: column;
-    @media screen and (min-width: $minimum_big_screen_width) {
+    @media screen and (min-width: $minimum-big-screen-width) {
         flex-direction: row;
         h1 {
             display: block;
@@ -446,7 +448,6 @@ $hamburger_width: 33px;
         }
     }
     justify-content: space-around;
-    align-content: center;
     border-radius: 5px;
     margin-top: $padding;
 
@@ -506,11 +507,9 @@ $hamburger_width: 33px;
 }
 
 footer {
+    @include flex-row;
     width: clamped-vw(100);
     font-size: 0.75 * $font-size;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     a {
         text-decoration: none;
         font-color: $text-color;
@@ -583,7 +582,7 @@ footer {
             }
         }
     }
-    @media screen and (max-width: $minimum_big_screen_width) {
+    @media screen and (max-width: $minimum-big-screen-width) {
         $home-links-mob-size: clamped-vw(6.5);
         font-size: $home-links-mob-size;
         padding-right: calc($home-links-mob-size/4);
