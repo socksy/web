@@ -18,6 +18,11 @@
   processes = {
     zola.exec = "zola serve";
   };
+  languages.python = {
+    enable = true;
+    venv.enable = true;
+    venv.requirements = lib.readFile ./cv-build/requirements.txt;
+  };
 
   git-hooks.hooks.build = {
     enable = true;

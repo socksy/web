@@ -49,7 +49,7 @@
         {% if exp.position %}<span class="position">{{ exp.position }}</span><br>{% endif %}
         {% if exp.result %}<span class="result">{{ exp.result }}</span><br>{% endif %}
         {% if exp.location %}<span class="location">{{ exp.location }}</span><br>{% endif %}
-            <span class="work-dates">{{ exp.startDate }}&nbsp;&ndash;&nbsp;{{ exp.endDate }}</span>
+            <span class="work-dates">{{ exp.startDate }}&nbsp;&ndash;&nbsp;{% if exp.endDate %}{{ exp.endDate }}{% endif %}</span>
     </div>
     {% if exp.intro %}
     <p class="intro">{{ exp.intro | markdown(inline=true) | safe }}</p>

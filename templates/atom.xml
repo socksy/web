@@ -24,7 +24,7 @@
         <link rel="alternate" type="text/html" href="{{ page.permalink | safe }}"/>
         <id>{{ page.permalink | safe }}</id>
         <summary type="html">{{ page.summary | escape_xml | safe }}</summary>
-        <content type="html" xml:base="{{ page.permalink | escape_xml | safe }}">{{ page.content }}</content>
+        <content type="html" xml:base="{{ page.permalink | escape_xml | safe }}">{{ page.content | striptags }}</content>
     </entry>
     {%- endfor %}
 </feed>

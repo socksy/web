@@ -6,12 +6,69 @@ base:
   url: "https://ben.lovell.io"
   github: "[socksy](https://github.com/socksy)"
   mastodon: "[@socksy@toot.cat](https://toot.cat/@socksy)"
-  summary: Hi, I'm Ben, an experienced Senior Software Engineer with a proven track record of delivering high impact projects, enhancing workflows, and fostering technical expertise in fast paced software development environments.
+  bluesky: "[@ben.lovell.io](https://bsky.app/profile/ben.lovell.io)"
+  linkedin: "[benjlovell](https://www.linkedin.com/in/benjlovell/)"
+  summary: >
+    Hi, I'm Ben, an experienced Senior Software Engineer with a **proven track record** of delivering **high impact projects**, enhancing workflows, and **fostering technical expertise** in fast paced software development environments.
+
+
+    I'm currently looking for backend and fullstack roles where I can drive architectural decisions.
+  skills:
+    best:
+      - Clojure & ClojureScript
+      - Python
+      - Backend Architecture
+      - Dev Tooling
+      - PostgreSQL
+      - Infrastructure
+      - Data Intensive engineering
+      - Microservice design (REST + async)
+      - CI/CD
+    good:
+      - Infrastructure as code
+      - Ruby (+ Ruby on Rails)
+      - TypeScript/JavaScript
+      - React
+      - Nix
+      - Docker
+      - Cassandra
+      - Kafka
+    ok:
+      - Scala
+      - Go
+      - Rust
+      - HTML/CSS
+      - Kubernetes
+      - MongoDB
+      - Compilers/Parsers
 experience:
+  - orgName: Self Employment
+    position: Freelancer & Open Source
+    startDate: September 2024
+    location: Berlin, Germany
+    intro: >
+      After taking some time off decided to better my personal 
+      technical knowledge in key areas, give back to Open Source
+      projects I use every day, and from November successfully
+      applied for the German government Gründungzuschuss (startup 
+      grant) to be able to work for myself
+    highlights:
+      - developed a workflow tool in Clojure for dealing with incident management
+      - created a TUI library for babashka and Clojure
+      - contributed new package for NixOS
+      - started to rewrite workflow tool in Rust
+      - learned LLM internals and embeddings, with emphasis on Python usage and Ollama
+      - automated website/blog deployment for personal website and https://clojure.berlin
+    tech:
+      - Clojure (/ Babashka)
+      - Rust
+      - Terraform & Hetzner
+      - Typst
+      - Python (with Transformers, langchain)
   - orgName: Pitch Software GmbH
     position: Senior Software Engineer
     startDate: January 2019
-    endDate: March 2024
+    endDate: April 2024
     location: Berlin, Germany
     intro: >
       Contributed to the development of Pitch's backend and
@@ -22,24 +79,37 @@ experience:
       - >
          introduced a reproducible development environment and
          tooling, improving workflows and productivity across
-         engineering team
+         engineering team using a combination of nix, docker, 
+         bash and Python
       - >
          led a cross-team documentation working group, making
          technical onboarding smoother and improving internal
          knowledge sharing
       - >
-         took initiative to fix many frontend and backend
-         problems, gaining buy-in from leadership
+         took initiative to fix many frontend (CLJS/React) and 
+         backend (CLJ/Postgres) problems, gaining buy-in from 
+         leadership with cost/benefit analyses
       - >
-         designed and implemented improvement's to the the
-         core sync system to address data loss and developer
-         productivity issues in the offline first
-         functionality, working with senior leadership on a
-         long-term roadmap
+         designed and implemented improvements to the core
+         sync system to address data loss and developer productivity
+         issues in the offline first functionality, working with 
+         senior leadership on a long-term roadmap
       - >
          mentored junior engineers, guiding them through their
          first feature implementations and fostering technical
          growth
+    tech:
+      - Clojure & ClojureScript (fullstack, isomorphic)
+      - PostgreSQL (optimizing, deploying, queries with hugsql, tests)
+      - Docker/Compose (local devstack, AWS Lambda deploys)
+      - AWS (Cloudformation, CloudFront, Lambda, EC2, EB, ECS, Fargate, API Gateway, S3, SQS)
+      - HTML/CSS (Stylus, Hiccup)
+      - TypeScript (esp. with CDK)
+      - CI/CD (Travis, CircleCI, lots of YAML)
+      - Bash (developer UX)
+      - Python (less hacky developer UX)
+      - Nix (reproducible environments, flakes)
+      - React/Reframe (cljs alt to redux, also hooks/functional components)
   - orgName: Geeny/Telefonicá Next GmbH
     position: Backend Data Engineer
     startDate: March 2017
@@ -63,6 +133,20 @@ experience:
          led the effort to have a 15-repo continuous
          integration and deployment process with GitLab CI/CD,
          reducing the release cycle from weeks to minutes
+    tech:
+      - Scala
+      - Clojure
+      - JavaScript
+      - Java
+      - Kafka
+      - Postgres
+      - Docker, Docker Swarm
+      - AWS, Google Cloud
+      - MongoDB
+      - Kubernetes
+      - GitLab CI
+      - Protobufs
+      - Microservice design
   - orgName: Red Pineapple Media GmbH
     position: Software Engineer
     startDate: April 2015
@@ -84,6 +168,15 @@ experience:
       - >
          played a key role in system design, partner
          communication, and architecture decisions
+    tech:
+      - Clojure
+      - PHP
+      - JavaScript
+      - MySQL
+      - Cassandra
+      - OpenRTB
+      - Gatling
+      - AWS
   - orgName: lifelife UG
     position: Full Stack Developer
     startDate: November 2014
@@ -93,6 +186,12 @@ experience:
       Created a decoupled separate service to interact with
       the main Rails application. Implemented funnel metrics,
       multiple locale support, and more.
+    tech:
+      - Ruby on Rails
+      - Sinatra
+      - Cucumber/Gherkin BDD testing
+      - JavaScript
+      - HTML/CSS
   - orgName: Skyscanner Ltd
     position: "Intern at Change the Market (R&D)"
     startDate: June 2013
@@ -101,6 +200,10 @@ experience:
     intro: >
       Built a better R&D frontend interface by writing a small
       DSL & parser (in JavaScript).
+    tech:
+      - JavaScript
+      - Parser/Compiler writing
+      - Python
   - orgName: University of St Andrews
     position: Research Intern
     startDate: June 2012
@@ -108,6 +211,8 @@ experience:
     intro: >
       Created a population simulation tool for demographic and
       graph db testing.
+    tech:
+      - Java
 other:
   - orgName: Clojure Berlin Meetup
     position: Co-Organizer
