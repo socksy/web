@@ -12,7 +12,7 @@ feed_filenames = ["atom.xml"]
 
 [markdown.highlighting]
 enabled = true
-theme = "zenburn"
+theme = "gruvbox-dark-medium"
 
 [extra]
 # Put all your custom variables here
