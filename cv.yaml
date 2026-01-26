@@ -10,9 +10,6 @@ base:
   linkedin: "[benjlovell](https://www.linkedin.com/in/benjlovell/)"
   summary: >
     Hi, I'm Ben, an experienced Senior Software Engineer with a **proven track record** of delivering **high impact projects**, enhancing workflows, and **fostering technical expertise** in fast paced software development environments.
-
-
-    I'm currently looking for backend and fullstack roles where I can drive architectural decisions.
   skills:
     best:
       - Clojure & ClojureScript
@@ -42,29 +39,58 @@ base:
       - MongoDB
       - Compilers/Parsers
 experience:
+  - orgName: Tower
+    position: Senior Software Engineer
+    startDate: June 2025
+    location: Berlin, Germany (Remote)
+    intro: >
+      Contributed to CLI tooling, backend infrastructure, and developer
+      experience for Tower's serverless Python platform. Core contributor across
+      the Rust CLI, Go/Rust/TypeScript monorepo, and infrastructure:
+    highlights:
+      - >
+         led, architected and implemented the development of an MCP
+         (Model Context Protocol) server in the Rust CLI, proving
+         critical for adoption
+      - >
+         improved reactivity and reduced backend load & frontend data
+         consumption by introducing a shoulder tap SSE/fetch system
+      - >
+         designed and built the Organizations multi-tenancy
+         system end-to-end, including database migrations,
+         API changes, and billing integration
+      - >
+         migrated infrastructure provisioning to Terraform/OpenTofu,
+         including EKS dataplane, AWS SSO user management, and
+         observability pipelines
+      - >
+         parallelized Go test suite with isolated databases,
+         reducing test runs from ~1m30s to ~5s, and eliminating
+         flaky tests
+    tech:
+      - Rust (CLI, backend runner, MCP server)
+      - Go (backend services, GORM, integration tests)
+      - TypeScript/React (frontend, React/TanStack Query)
+      - Terraform/OpenTofu (AWS, EKS, SSO)
+      - PostgreSQL & Redis
+      - Nix (devenv, flakes)
   - orgName: Self Employment
     position: Freelancer & Open Source
     startDate: September 2024
+    endDate: June 2025
     location: Berlin, Germany
     intro: >
-      After taking some time off decided to better my personal 
-      technical knowledge in key areas, give back to Open Source
-      projects I use every day, and from November successfully
-      applied for the German government Gründungzuschuss (startup 
-      grant) to be able to work for myself
+      Took time between roles for contract work and open
+      source contributions.
     highlights:
-      - developed a workflow tool in Clojure for dealing with incident management
-      - created a TUI library for babashka and Clojure
-      - contributed new package for NixOS
-      - started to rewrite workflow tool in Rust
-      - learned LLM internals and embeddings, with emphasis on Python usage and Ollama
-      - automated website/blog deployment for personal website and https://clojure.berlin
+      - helped designed and implement a dependency injection framework in Rust for a client
+      - contributed packages to NixOS
+      - worked on some small projects for a Clojure TUI, incident response management, clojure.berlin
     tech:
-      - Clojure (/ Babashka)
       - Rust
-      - Terraform & Hetzner
-      - Typst
-      - Python (with Transformers, langchain)
+      - Nix
+      - Clojure/Babashka
+      - Terraform
   - orgName: Pitch Software GmbH
     position: Senior Software Engineer
     startDate: January 2019
