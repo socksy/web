@@ -181,7 +181,7 @@
 
 #block(fill: zebra-dark, inset: 0.5em, radius: 2pt, width: 100%)[
     = Education
-    #experience-compact(cv.education.orgName, none, cv.education.startDate, cv.education.endDate, cv.education.location, cv.education.intro, none, none)
+    #experience-compact(cv.education.orgName, cv.education.result, cv.education.startDate, cv.education.endDate, cv.education.location, cv.education.intro, none, none)
 ]
 
 = Outside responsibilities
