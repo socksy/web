@@ -42,7 +42,7 @@ experience:
   - orgName: Tower
     position: Senior Software Engineer
     startDate: June 2025
-    location: Berlin, Germany (Remote)
+    location: Berlin, Germany
     intro: >
       Contributed to CLI tooling, backend infrastructure, and developer
       experience for Tower's serverless Python platform. Core contributor across
@@ -68,12 +68,12 @@ experience:
          reducing test runs from ~1m30s to ~5s, and eliminating
          flaky tests
     tech:
-      - Rust (CLI, backend runner, MCP server)
-      - Go (backend services, GORM, integration tests)
-      - TypeScript/React (frontend, React/TanStack Query)
-      - Terraform/OpenTofu (AWS, EKS, SSO)
+      - Rust
+      - Go
+      - TypeScript/React
+      - Terraform
       - PostgreSQL & Redis
-      - Nix (devenv, flakes)
+      - Nix
   - orgName: Self Employment
     position: Freelancer & Open Source
     startDate: September 2024
@@ -125,17 +125,12 @@ experience:
          first feature implementations and fostering technical
          growth
     tech:
-      - Clojure & ClojureScript (fullstack, isomorphic)
-      - PostgreSQL (optimizing, deploying, queries with hugsql, tests)
-      - Docker/Compose (local devstack, AWS Lambda deploys)
-      - AWS (Cloudformation, CloudFront, Lambda, EC2, EB, ECS, Fargate, API Gateway, S3, SQS)
-      - HTML/CSS (Stylus, Hiccup)
-      - TypeScript (esp. with CDK)
-      - CI/CD (Travis, CircleCI, lots of YAML)
-      - Bash (developer UX)
-      - Python (less hacky developer UX)
-      - Nix (reproducible environments, flakes)
-      - React/Reframe (cljs alt to redux, also hooks/functional components)
+      - Clojure/ClojureScript
+      - PostgreSQL
+      - Docker
+      - AWS
+      - TypeScript
+      - Nix
   - orgName: Geeny/Telefonicá Next GmbH
     position: Backend Data Engineer
     startDate: March 2017
@@ -162,17 +157,12 @@ experience:
     tech:
       - Scala
       - Clojure
-      - JavaScript
-      - Java
       - Kafka
       - Postgres
-      - Docker, Docker Swarm
-      - AWS, Google Cloud
-      - MongoDB
+      - Docker
+      - AWS
       - Kubernetes
-      - GitLab CI
       - Protobufs
-      - Microservice design
   - orgName: Red Pineapple Media GmbH
     position: Software Engineer
     startDate: April 2015
@@ -181,23 +171,9 @@ experience:
     intro: >
       I was brought on to help the urgent rewrite of the video
       ad delivery system from PHP using a modern Clojure
-      stack. Working in teams from 2 to 6 people I've:
-    highlights:
-      - >
-         rewritten business-critical APIs, improving
-         performance and reducing hosting infrastructure costs
-         by 70%
-      - >
-         developed the company's Real Time Bidding (RTB)
-         bidder, expanding their reach into a multibillion
-         dollar market
-      - >
-         played a key role in system design, partner
-         communication, and architecture decisions
+      stack. Key role in system design and performance.
     tech:
       - Clojure
-      - PHP
-      - JavaScript
       - MySQL
       - Cassandra
       - OpenRTB
@@ -215,9 +191,6 @@ experience:
     tech:
       - Ruby on Rails
       - Sinatra
-      - Cucumber/Gherkin BDD testing
-      - JavaScript
-      - HTML/CSS
   - orgName: Skyscanner Ltd
     position: "Intern at Change the Market (R&D)"
     startDate: June 2013
@@ -227,7 +200,6 @@ experience:
       Built a better R&D frontend interface by writing a small
       DSL & parser (in JavaScript).
     tech:
-      - JavaScript
       - Parser/Compiler writing
       - Python
   - orgName: University of St Andrews
@@ -237,8 +209,6 @@ experience:
     intro: >
       Created a population simulation tool for demographic and
       graph db testing.
-    tech:
-      - Java
 other:
   - orgName: Clojure Berlin Meetup
     position: Co-Organizer
