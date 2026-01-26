@@ -13,6 +13,9 @@
     pkgs.zola
     pkgs.imagemagick
     pkgs.inkscape
+    pkgs.typst
+    pkgs.inter
+    pkgs.ibm-plex
   ];
 
   processes = {
@@ -24,8 +27,10 @@
     venv.requirements = lib.readFile ./cv-build/requirements.txt;
   };
 
+  env.TYPST_FONT_PATHS = "${pkgs.inter}/share/fonts/truetype:${pkgs.ibm-plex}/share/fonts/opentype";
+
   git-hooks.hooks.build = {
-    enable = true;
+    enable = false;
     name = "Build site before committing";
     entry = "zola build";
     pass_filenames = false;

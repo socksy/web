@@ -79,18 +79,14 @@
 ]
 #invisible-line()
 = Skills
-=== Fluent
-#for skill in cv.base.skills.best [
-    - #skill
-]
-=== Proficient
-#for skill in cv.base.skills.good [
-    - #skill
-]
-=== Familiar
-#for skill in cv.base.skills.ok [
-    - #skill
-]
+#let skill-pills(skills) = {
+    skills.join("  •  ")
+}
+#table(columns: (auto, 1fr), row-gutter: 0.3em,
+    [*Fluent:*], skill-pills(cv.base.skills.best),
+    [*Proficient:*], skill-pills(cv.base.skills.good),
+    [*Familiar:*], skill-pills(cv.base.skills.ok),
+)
 
 #let render-bolded-item(before: "", split-on: " ", after-array: ()) = {
     let after-string = after-array.join(split-on)
@@ -140,17 +136,11 @@
 
             #bold-first-list(..highlights)
             #if tech != none [
-                #set list(body-indent: 0.2em, indent: 0em, marker: "") //, marker: "•")
                 #invisible-line()
                 #move(dy: -1em,
-                    box(fill: dark, inset: (top: 1em, left: 1.5em, bottom: 0.3em), radius: 2pt)[
-                        #text(12pt, fill: white, font: "Inter Display", weight: 200)[Tech Stack]\
-                        #invisible-line(bg: dark)
+                    box(fill: dark, inset: (top: 0.6em, left: 1em, right: 1em, bottom: 0.4em), radius: 2pt, width: 100%)[
                         #set text(7pt, fill: white, font: "IBM Plex Sans")
-                        #move(dy: -1.2em, grid(columns: (1fr),
-                            gutter: 0.8em,
-                            ..tech.flatten().map(bold-first-paren),
-                            invisible-line(bg: dark)))
+                        #tech.flatten().join("  •  ")
                     ]
                 )
             ]
@@ -159,13 +149,11 @@
 ]
 
 #invisible-line()
-#pagebreak()
 = Experience
 #for exp in cv.experience [
     #experience(exp.orgName, exp.position, exp.startDate, exp.at("endDate", default: "Present Day"), exp.at("location", default: none), exp.intro, exp.at("highlights", default: none), exp.tech)
 ]
 #invisible-line()
-#pagebreak()
 = Education
 #experience(cv.education.orgName, none, cv.education.startDate, cv.education.endDate, cv.education.location, cv.education.intro, none, none)
 
