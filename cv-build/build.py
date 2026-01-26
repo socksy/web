@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
+import os
 import yaml
 import typst
 from datetime import datetime
 from jinja2 import Template
 from pathlib import Path
 from watchfiles import watch
+
+font_paths = os.environ.get("TYPST_FONT_PATHS", "").split(":") if os.environ.get("TYPST_FONT_PATHS") else []
 
 def now():
     return datetime.now().strftime("[%H:%M]")
@@ -26,7 +29,7 @@ def render():
         f.write(template.render(cv_data))
 
     try:
-        typst.compile(output_typ, root=root, output=output_pdf)
+        typst.compile(output_typ, root=root, output=output_pdf, font_paths=font_paths)
         print(f"{now()} Built successfully")
     except RuntimeError as err:
         print(f"{now()} Could not build:")
