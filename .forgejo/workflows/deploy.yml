@@ -9,6 +9,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build and deploy
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
         run: |
           nix run nixpkgs#zola -- build
-          rsync -avz --no-times public/ /var/www/ben/ 
+          mkdir -p ~/.ssh && echo "$DEPLOY_KEY" > ~/.ssh/key && chmod 600 ~/.ssh/key
+          ssh-keyscan -p 22 localhost >> ~/.ssh/known_hosts 2>/dev/null
+          rsync -avz -e "ssh -i ~/.ssh/key" public/ deploy-web@localhost:
+          rm ~/.ssh/key
