@@ -1,0 +1,14 @@
+name: Deploy
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: native
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and deploy
+        run: |
+          nix run nixpkgs#zola -- build
+          rsync -avz --no-times public/ /var/www/ben/ 
