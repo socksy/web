@@ -11,9 +11,10 @@ jobs:
       - name: Build and deploy
         env:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+          DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
         run: |
           nix run nixpkgs#zola -- build
           mkdir -p ~/.ssh && echo "$DEPLOY_KEY" > ~/.ssh/key && chmod 600 ~/.ssh/key
-          ssh-keyscan -p 22 localhost >> ~/.ssh/known_hosts 2>/dev/null
-          rsync -avz -e "ssh -i ~/.ssh/key" public/ deploy-web@localhost:
+          ssh-keyscan -p "$DEPLOY_PORT" localhost >> ~/.ssh/known_hosts 2>/dev/null
+          rsync -avz -e "ssh -i ~/.ssh/key -p $DEPLOY_PORT" public/ deploy-web@localhost:
           rm ~/.ssh/key
