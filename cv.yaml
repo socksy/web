@@ -50,8 +50,24 @@ experience:
     highlights:
       - >
          led, architected and implemented the development of an MCP
-         (Model Context Protocol) server in the Rust CLI, proving
-         critical for adoption
+         (Model Context Protocol) server in the Rust CLI and a
+         Claude Code plugin built on it, proving critical for
+         adoption
+      - >
+         hardened run execution for a key partner evaluation:
+         built load testing harnesses to find the platform's
+         saturation points, then fixed what they exposed — graceful
+         shutdown with drain mode, runner reconnection with
+         challenge-response identity verification, and adoption of
+         orphaned Kubernetes pods after runner restarts
+      - >
+         built cron scheduling end-to-end, from data model and
+         public API through to a Redis-backed scheduler with
+         distributed locking
+      - >
+         led migration of all telemetry to Grafana Cloud
+         (OpenTofu-provisioned), introducing end-to-end distributed
+         tracing of runs across HTTP, gRPC and Redis boundaries
       - >
          improved reactivity and reduced backend load & frontend data
          consumption by introducing a shoulder tap SSE/fetch system
@@ -59,10 +75,6 @@ experience:
          designed and built the Organizations multi-tenancy
          system end-to-end, including database migrations,
          API changes, and billing integration
-      - >
-         migrated infrastructure provisioning to Terraform/OpenTofu,
-         including EKS dataplane, AWS SSO user management, and
-         observability pipelines
       - >
          parallelized Go test suite with isolated databases,
          reducing test runs from ~1m30s to ~5s, and eliminating
