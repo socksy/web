@@ -459,6 +459,9 @@ nav {
         }
     }
 }
+// only exists for the print stylesheet's header band
+.print-contact { display: none; }
+
 .experience {
     .experience-details {
         padding: $padding;

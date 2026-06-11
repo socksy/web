@@ -15,6 +15,13 @@
 {% set cv = load_data(path="cv.yaml") %}
 {{ macros::navbar(current="cv") }}
 {{ macros::header(text=cv.base.name)}}
+<div class="print-contact">
+    <span class="print-contact-title">{{ cv.base.title }}</span>
+    <span>{{ cv.base.email | markdown(inline=true) | safe }}</span>
+    <span>{{ cv.base.url | replace(from="https://", to="") }}</span>
+    <span>github/{{ cv.base.github | markdown(inline=true) | safe }}</span>
+    <span>{{ cv.base.mastodon | markdown(inline=true) | safe }}</span>
+</div>
 <main>{{ page.content | safe }}
 <div class="links">
 <h1>{{ cv.base.title }}</h1>
@@ -33,6 +40,7 @@
 {{ macros::experience(exp=work) }}
 {% endfor %}
 
+<aside class="side-sections">
 <h1 id="other">Outside Responsibilities</h1>
 
 {% for org in cv.other %}
@@ -42,6 +50,7 @@
 <h1 id="education">Education</h1>
 
 {{ macros::experience(exp=cv.education, id="university-of-st-andrews-education") }}
+</aside>
 <br>
 </main>
 {% endblock content %}
