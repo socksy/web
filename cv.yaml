@@ -49,36 +49,23 @@ experience:
       the Rust CLI, Go/Rust/TypeScript monorepo, and infrastructure:
     highlights:
       - >
-         led, architected and implemented the development of an MCP
-         (Model Context Protocol) server in the Rust CLI and a
-         Claude Code plugin built on it, proving critical for
-         adoption
+         built an MCP server into the Rust CLI and a Claude Code
+         plugin on top of it, proving critical for adoption
       - >
-         hardened run execution for a key partner evaluation:
-         built load testing harnesses to find the platform's
-         saturation points, then fixed what they exposed — graceful
-         shutdown with drain mode, runner reconnection with
-         challenge-response identity verification, and adoption of
-         orphaned Kubernetes pods after runner restarts
+         hardened run execution for a key partner evaluation,
+         load testing to saturation and fixing the failures it
+         exposed across shutdown, reconnection, and pod recovery
       - >
-         built cron scheduling end-to-end, from data model and
-         public API through to a Redis-backed scheduler with
-         distributed locking
-      - >
-         led migration of all telemetry to Grafana Cloud
-         (OpenTofu-provisioned), introducing end-to-end distributed
-         tracing of runs across HTTP, gRPC and Redis boundaries
-      - >
-         improved reactivity and reduced backend load & frontend data
-         consumption by introducing a shoulder tap SSE/fetch system
+         implemented metrics, dashboards, and distributed tracing
+         in Grafana Cloud, making run failures traceable across
+         every service boundary
       - >
          designed and built the Organizations multi-tenancy
-         system end-to-end, including database migrations,
-         API changes, and billing integration
+         system, from database to billing, so customers can give
+         each of their users an isolated account under one umbrella
       - >
-         parallelized Go test suite with isolated databases,
-         reducing test runs from ~1m30s to ~5s, and eliminating
-         flaky tests
+         parallelized the Go test suite, cutting runs from
+         ~1m30s to ~5s and eliminating flaky tests
     tech:
       - Rust
       - Go
@@ -109,33 +96,27 @@ experience:
     endDate: April 2024
     location: Berlin, Germany
     intro: >
-      Contributed to the development of Pitch's backend and
-      frontend systems, working over 4 different product areas
-      and ending up specializing in the offline-first sync
-      system. Some of the stuff I worked on:
+      Worked across 4 product areas on Pitch's backend and
+      frontend, specializing in the offline-first sync system:
     highlights:
       - >
-         introduced a reproducible development environment and
-         tooling, improving workflows and productivity across
-         engineering team using a combination of nix, docker, 
-         bash and Python
+         introduced reproducible development environments with
+         Nix and Docker, improving productivity across the
+         engineering team
       - >
-         led a cross-team documentation working group, making
-         technical onboarding smoother and improving internal
-         knowledge sharing
+         led a cross-team documentation working group, improving
+         onboarding and internal knowledge sharing
       - >
-         took initiative to fix many frontend (CLJS/React) and 
-         backend (CLJ/Postgres) problems, gaining buy-in from 
-         leadership with cost/benefit analyses
+         fixed uncontrollable image auto-cropping on the canvas
+         in a self-led project, winning buy-in from the CTO and
+         QA lead
       - >
-         designed and implemented improvements to the core
-         sync system to address data loss and developer productivity
-         issues in the offline first functionality, working with 
-         senior leadership on a long-term roadmap
+         designed improvements to the core sync system to address
+         data loss and developer productivity issues, shaping a
+         long-term roadmap with senior leadership
       - >
-         mentored junior engineers, guiding them through their
-         first feature implementations and fostering technical
-         growth
+         mentored junior engineers through their first feature
+         implementations
     tech:
       - Clojure/ClojureScript
       - PostgreSQL
