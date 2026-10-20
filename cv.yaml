@@ -20,9 +20,13 @@ base:
       - Infrastructure
       - Data Intensive engineering
       - Microservice design (REST + async)
+      - Functional programming / immutable data mindset
       - CI/CD
     good:
       - Infrastructure as code
+      - Rust
+      - Compilers/Parsers & DSLs
+      - Kubernetes
       - Ruby (+ Ruby on Rails)
       - TypeScript/JavaScript
       - React
@@ -33,11 +37,8 @@ base:
     ok:
       - Scala
       - Go
-      - Rust
       - HTML/CSS
-      - Kubernetes
       - MongoDB
-      - Compilers/Parsers
 experience:
   - orgName: Tower
     position: Senior Software Engineer
@@ -49,27 +50,29 @@ experience:
       the Rust CLI, Go/Rust/TypeScript monorepo, and infrastructure:
     highlights:
       - >
-         built an MCP server into the Rust CLI and a Claude Code
-         plugin on top of it, proving critical for adoption
+         redesigned the runner event loop as an observe-decide-act
+         state machine, with the decision step a pure function and
+         all IO at the edges, making run behaviour deterministic
+         and unit testable
       - >
-         hardened run execution for a key partner evaluation,
-         load testing to saturation and fixing the failures it
-         exposed across shutdown, reconnection, and pod recovery
-      - >
-         implemented metrics, dashboards, and distributed tracing
-         in Grafana Cloud, making run failures traceable across
-         every service boundary
+         improved the resilience of customer jobs through
+         deployment rollouts and transient failures
       - >
          designed and built the Organizations multi-tenancy
          system, from database to billing, so customers can give
          each of their users an isolated account under one umbrella
       - >
-         parallelized the Go test suite, cutting runs from
-         ~1m30s to ~5s and eliminating flaky tests
+         implemented metrics, dashboards, and distributed tracing
+         in Grafana Cloud, making run failures traceable across
+         every service boundary
+      - >
+         built an MCP server into the Rust CLI and a Claude Code
+         plugin on top of it, proving critical for adoption
     tech:
       - Rust
       - Go
       - TypeScript/React
+      - Kubernetes
       - Terraform
       - PostgreSQL & Redis
       - Nix
@@ -82,7 +85,7 @@ experience:
       Took time between roles for contract work and open
       source contributions.
     highlights:
-      - helped designed and implement a dependency injection framework in Rust for a client
+      - helped design and implement a dependency injection framework in Rust for a client
       - contributed packages to NixOS
       - worked on some small projects for a Clojure TUI, incident response management, clojure.berlin
     tech:
@@ -96,27 +99,26 @@ experience:
     endDate: April 2024
     location: Berlin, Germany
     intro: >
-      Worked across 4 product areas on Pitch's backend and
-      frontend, specializing in the offline-first sync system:
+      Five years of production Clojure and ClojureScript across 4
+      product areas of Pitch's backend and frontend, specializing
+      in the offline-first sync system:
     highlights:
       - >
-         introduced reproducible development environments with
-         Nix and Docker, improving productivity across the
-         engineering team
-      - >
-         led a cross-team documentation working group, improving
-         onboarding and internal knowledge sharing
+         designed improvements to the core Clojure sync system to
+         address data loss and convergence bugs under concurrent
+         edits, shaping a long-term roadmap with senior leadership
       - >
          fixed uncontrollable image auto-cropping on the canvas
          in a self-led project, winning buy-in from the CTO and
          QA lead
       - >
-         designed improvements to the core sync system to address
-         data loss and developer productivity issues, shaping a
-         long-term roadmap with senior leadership
-      - >
          mentored junior engineers through their first feature
-         implementations
+         implementations, and led a cross-team documentation
+         working group
+      - >
+         introduced reproducible development environments with
+         Nix and Docker, improving productivity across the
+         engineering team
     tech:
       - Clojure/ClojureScript
       - PostgreSQL
@@ -124,14 +126,14 @@ experience:
       - AWS
       - TypeScript
       - Nix
-  - orgName: Geeny/Telefonicá Next GmbH
+  - orgName: Geeny/Telefónica Next GmbH
     position: Backend Data Engineer
     startDate: March 2017
-    endDate: December 2019
+    endDate: December 2018
     location: Berlin, Germany
     intro: >
       Hired as part of the full time expansion of the Geeny
-      IoT Cloud platform from Telefonicá Next GmbH, in order
+      IoT Cloud platform from Telefónica Next GmbH, in order
       to build a data privacy first IoT solution I've:
     highlights:
       - >
@@ -162,7 +164,7 @@ experience:
     endDate: February 2017
     location: Berlin, Germany
     intro: >
-      I was brought on to help the urgent rewrite of the video
+      I was brought on to help with the urgent rewrite of the video
       ad delivery system from PHP using a modern Clojure
       stack. Key role in system design and performance.
     tech:

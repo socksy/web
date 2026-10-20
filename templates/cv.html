@@ -4,7 +4,7 @@
 {% set cv = load_data(path="cv.yaml") %}
 <link href="/print.css" media="print" rel="stylesheet">
 
-<meta property="og:title" content="{{ page.title }}">
+<meta property="og:title" content="{{ cv.base.name }} – {{ cv.base.title }} in Berlin">
 <meta property="og:url" content="{{ page.permalink | safe }}">
 <meta property="og:type" content="website">
 <meta property="og:description" content="{{ cv.base.summary | safe }}">
